@@ -24,4 +24,43 @@ public class StandRating {
 	
 	
 	private double rating;
+
+
+	public StandRating(int tlfnr, int standid, double rating) {
+
+		this.tlfnr = tlfnr;
+		this.standid = standid;
+		this.rating = rating;
+	}
+
+
+	public int getTlfnr() {
+		return tlfnr;
+	}
+
+
+	public void setTlfnr(int tlfnr) {
+		this.tlfnr = tlfnr;
+	}
+
+
+	public int getStandid() {
+		return standid;
+	}
+
+
+	public void setStandid(int standid) {
+		this.standid = standid;
+	}
+
+
+	public double getRating() {
+		return rating;
+	}
+
+
+	public void setRating(double rating) {
+		this.rating = rating;
+	}
+	
 }

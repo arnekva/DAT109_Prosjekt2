@@ -26,6 +26,9 @@ public class StandServlet extends HttpServlet {
 
 	@EJB
 	private StandEAO standEAO;
+	
+	@EJB
+	private UserEAO userEAO;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -63,7 +66,14 @@ public class StandServlet extends HttpServlet {
 		if (sesjon == null || sesjon.getAttribute("bruker") == null) {
 			response.sendRedirect("logginn" + "?nosession");
 		}
+		String rating = request.getParameter("rating");
+//		User user = userEAO.hentBrukerPaaPK(sesjon.getAttribute("bruker"));
+		User user = null;
+		StandRating standrating = new StandRating(user, sesjon.getAttribute("stand"), rating);
 		
+		
+		Stand stand = (Stand) request.getSession().getAttribute("stand");
+	
 	}
 
 }
