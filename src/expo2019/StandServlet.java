@@ -36,7 +36,7 @@ public class StandServlet extends HttpServlet {
 		HttpSession sesjon = request.getSession(false);
 		boolean erLoggetInn = false;
 
-		//TODO: Behandling av feilmeldinger
+		// TODO: Behandling av feilmeldinger
 		String standid = request.getParameter("standid");
 		request.getSession().removeAttribute("standid");
 		if (!standEAO.kanKonverteres(standid)) {
@@ -68,16 +68,17 @@ public class StandServlet extends HttpServlet {
 		String ratingParam = request.getParameter("rating");
 		double rating = 0;
 		int tlfnr = 0;
-		String standid = request.getParameter("standid");
+		int standid = 0;
 		try {
 			rating = Double.parseDouble(ratingParam);
+			standid = Integer.parseInt(request.getParameter("standid"));
 		} catch (Exception e) {
 			response.sendRedirect("stand" + "?invalidRating");
 		}
 
 		User user = (User) sesjon.getAttribute("bruker");
 
-		StandRating standrating = new StandRating(tlfnr, user.getTlfnr(), rating);
+		StandRating standrating = new StandRating(user.getTlfnr(), standid, rating);
 
 		standEAO.leggTilStandRating(standrating);
 		response.sendRedirect("stand" + "?ratingValid");
