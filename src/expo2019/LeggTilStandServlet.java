@@ -1,11 +1,13 @@
 package expo2019;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class LeggTilStandServlet
@@ -36,6 +38,10 @@ public class LeggTilStandServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
+		HttpSession sesjon = request.getSession();
+		
+		//TODO: Valider sesjon, og hent ut info fra parameterer, opprett Standobjekt og persist via EAO.
 	}
 
 }
