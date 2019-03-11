@@ -1,12 +1,15 @@
 package expo2019;
 
+import java.util.Collections;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "stand", schema = "expo2019")
-public class Stand {
+public class Stand implements Comparable<Stand>{
 
 	@Id
 	private int standid;
@@ -97,6 +100,19 @@ public class Stand {
 
 	public void setQrUrl(String qrUrl) {
 		this.qrUrl = qrUrl;
+	}
+	@Override
+	public int compareTo(Stand s) {
+	  if(this.kalkulertscore < s.kalkulertscore) {
+	    return 1;
+	  }else if (this.kalkulertscore > s.kalkulertscore){
+	    return -1;
+	  }else {
+	    return 0;
+	  }
+	}
+	public static void sorter(List<Stand> stands) {
+	  Collections.sort(stands);
 	}
 
 }
