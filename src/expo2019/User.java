@@ -22,6 +22,14 @@ public class User {
     	this.tlfnr = tlfnr;
     	this.passord = passord;
     }
+
+	public int getTlfnr() {
+		return tlfnr;
+	}
+
+	public void setTlfnr(int tlfnr) {
+		this.tlfnr = tlfnr;
+	}
     
     
 }

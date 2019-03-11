@@ -34,6 +34,10 @@ public class StandEAO {
 		return stands;
 	}
 	
+	public User hentBrukerPaaPK(int tlfnr) {
+		return em.find(User.class, tlfnr);
+	}
+	
 	public boolean kanKonverteres(String i) {
 		try {
 			Integer.parseInt(i);
@@ -41,5 +45,9 @@ public class StandEAO {
 		} catch(Exception e){
 			return false;
 		}
+	}
+	
+	public synchronized void leggTilStandRating(StandRating standrating) {
+		em.persist(standrating);
 	}
 }

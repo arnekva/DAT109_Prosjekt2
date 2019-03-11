@@ -27,8 +27,7 @@ public class StandServlet extends HttpServlet {
 	@EJB
 	private StandEAO standEAO;
 	
-	@EJB
-	private UserEAO userEAO;
+	
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -38,9 +37,9 @@ public class StandServlet extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession sesjon = request.getSession(false);
 		boolean erLoggetInn = false;
-
+		
 		String standid = request.getParameter("standid");
-
+		request.getSession().removeAttribute("standid");
 		if (!standEAO.kanKonverteres(standid)) {
 			response.sendRedirect("feilmelding" + "?unknownStandId");
 		}
@@ -51,6 +50,7 @@ public class StandServlet extends HttpServlet {
 			erLoggetInn = true;
 		}
 		request.getSession().setAttribute("stand", stand);
+		request.getSession().setAttribute("standid", standid);
 		request.getRequestDispatcher("WEB-INF/stand.jsp").forward(request, response);
 		
 	}
@@ -66,13 +66,23 @@ public class StandServlet extends HttpServlet {
 		if (sesjon == null || sesjon.getAttribute("bruker") == null) {
 			response.sendRedirect("logginn" + "?nosession");
 		}
-		String rating = request.getParameter("rating");
-//		User user = userEAO.hentBrukerPaaPK(sesjon.getAttribute("bruker"));
-		User user = null;
-		StandRating standrating = new StandRating(user, sesjon.getAttribute("stand"), rating);
+		String ratingParam = request.getParameter("rating");
+	 double rating = 0;
+	 int tlfnr = 0;
+	 String standid = request.getParameter("standid");
+		try {
+			rating = Double.parseDouble(ratingParam);
+		} catch(Exception e) {
+			response.sendRedirect("feilmelding" + "?invalidRating");
+		}
+
 		
+		User user = (User) sesjon.getAttribute("bruker");
+
+		StandRating standrating = new StandRating(tlfnr, user.getTlfnr(), rating);
 		
-		Stand stand = (Stand) request.getSession().getAttribute("stand");
+		standEAO.leggTilStandRating(standrating);
+		response.sendRedirect("stand" + "?ratingValid");
 	
 	}
 
