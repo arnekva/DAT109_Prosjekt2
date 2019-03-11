@@ -36,10 +36,11 @@ public class StandServlet extends HttpServlet {
 		HttpSession sesjon = request.getSession(false);
 		boolean erLoggetInn = false;
 
+		//TODO: Behandling av feilmeldinger
 		String standid = request.getParameter("standid");
 		request.getSession().removeAttribute("standid");
 		if (!standEAO.kanKonverteres(standid)) {
-			response.sendRedirect("feilmelding" + "?unknownStandId");
+			response.sendRedirect("stand" + "?unknownStandId");
 		}
 
 		Stand stand = standEAO.hentStandPaaPK(Integer.parseInt(standid));
@@ -71,7 +72,7 @@ public class StandServlet extends HttpServlet {
 		try {
 			rating = Double.parseDouble(ratingParam);
 		} catch (Exception e) {
-			response.sendRedirect("feilmelding" + "?invalidRating");
+			response.sendRedirect("stand" + "?invalidRating");
 		}
 
 		User user = (User) sesjon.getAttribute("bruker");
