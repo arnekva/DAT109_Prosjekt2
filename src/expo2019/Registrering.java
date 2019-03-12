@@ -11,15 +11,18 @@ public class Registrering {
 	private String repeterPassord;
 	private String repeterFeil;
 	
-	private String tillatpassord = "^[a-zæøåA-ZÆØÅ0-9 .]+$";	
+	private String tillatpassord = "^[a-zæøåA-ZÆØÅ0-9 .]+$";
 	
-	public Registrering(HttpServletRequest request) {
+	private StandEAO StandEAO;
+	
+	public Registrering(HttpServletRequest request, StandEAO StandEAO) {
 		this.passord = (String) request.getParameter("passord");
 		this.tlf = (String) request.getParameter("tlf");
 		this.repeterPassord = (String) request.getParameter("repeterPassord");
 		this.passordFeil = "";
 		this.tlfFeil = "";
 		this.repeterFeil = "";
+		this.StandEAO = StandEAO;
 	}
 	
 	public boolean erAlleFeltGyldig() {
@@ -45,9 +48,7 @@ public class Registrering {
 	}
 	
 	public User newUser() {
-		int tlf2 = Integer.parseInt(this.tlf);
-		User user = new User(tlf2, this.passord);
-		
+		User user = StandEAO.hentBrukerPaaPK(Integer.parseInt(this.tlf));
 		return user;
 	}
 	

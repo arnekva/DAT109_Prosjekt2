@@ -32,7 +32,7 @@ public class RegistreringServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/registrering.jsp").forward(request, response);
 	}
 
 	/**
@@ -40,7 +40,7 @@ public class RegistreringServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		Registrering registrering = new Registrering(request);
+		Registrering registrering = new Registrering(request, StandEAO);
 		
 		if(registrering.erAlleFeltGyldig()) {
 			User user = registrering.newUser();
