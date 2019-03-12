@@ -17,7 +17,7 @@ public class RegistreringServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	@EJB
-	private UserEAO UserEAO;
+	private StandEAO StandEAO;
 	
        
     /**
@@ -40,7 +40,20 @@ public class RegistreringServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		doGet(request, response);
+		Registrering registrering = new Registrering();
+		
+		if(registrering.erAlleFeltGyldig()) {
+			User user = registrering.newUser();
+			request.getSession().removeAttribute("registrering");
+			request.getSession().setAttribute("User", user);
+			StandEAO.leggTilBruker(user);
+			response.sendRedirect("stands");
+		}else {
+			registrering.genererFeilmelding();
+			request.getSession().setAttribute("registrering", registrering);
+			response.sendRedirect("registrering");
+		}
 	}
 
 }
+
