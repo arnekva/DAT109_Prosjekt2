@@ -14,20 +14,20 @@
     <form method="post" class="pure-form pure-form-aligned">
         <fieldset>
             <div class="pure-control-group">
-                <label for="mobil">Mobil (8 siffer):</label> <input type="text"
-                    name="mobil" value="${Registrering.tlf}" /> 
-                    <font color="red">"${Registrering.tlfFeil}"</font>
+                <label for="tlf">Tlf (8 siffer):</label> <input type="text"
+                    name="tlf" value="${Registrering.tlf}" /> 
+                    <font color="red">${Registrering.tlfFeil}</font>
             </div>
             <div class="pure-control-group">
                 <label for="password">Passord:</label> <input type="password"
-                    name="passord" value="${Registrering.passord}" /> 
-                    <font color="red">"${Registrering.passordFeil}"</font>
+                    name="passord" value="" /> 
+                    <font color="red">${Registrering.passordFeil}</font>
             </div>
             <div class="pure-control-group">
-                <label for="passordRepetert">Passord repetert:</label> <input
-                    type="password" name="passordRepetert"
-                    value="${Registrering.passordRepeter}" /> 
-                    <font color="red">"${Registrering.repeterFeil}"</font>
+                <label for="repeterPassord">Passord repetert:</label> <input
+                    type="password" name="repeterPassord"
+                    value="" /> 
+                    <font color="red">${Registrering.repeterFeil}</font>
             </div>
             <div class="pure-controls">
                 <button type="submit" class="pure-button pure-button-primary">Registrer</button>

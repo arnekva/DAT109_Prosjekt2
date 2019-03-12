@@ -3,7 +3,7 @@ package expo2019;
 import javax.servlet.http.HttpServletRequest;
 
 public class Registrering {
-	
+
 	private String passord;
 	private String passordFeil;
 	private String tlf;
@@ -19,9 +19,6 @@ public class Registrering {
 		this.passord = (String) request.getParameter("passord");
 		this.tlf = (String) request.getParameter("tlf");
 		this.repeterPassord = (String) request.getParameter("repeterPassord");
-		this.passordFeil = "";
-		this.tlfFeil = "";
-		this.repeterFeil = "";
 		this.StandEAO = StandEAO;
 	}
 	
@@ -48,18 +45,18 @@ public class Registrering {
 	}
 	
 	public User newUser() {
-		User user = StandEAO.hentBrukerPaaPK(Integer.parseInt(this.tlf));
+		int tlf2 = Integer.parseInt(this.tlf);
+		User user = new User(tlf2, this.passord);
+		StandEAO.leggTilBruker(user);
 		return user;
 	}
 	
 	public void genererFeilmelding() {
 		if(!erPassordGyldig(passord)) {
 			this.passord = "";
-			this.repeterPassord = "";
 			this.passordFeil = "Ugyldig Passord. Passordet må være minst 4 karakterer langt.";
 		}
 		if(!erRepeterGyldig(repeterPassord)) {
-			this.passord = "";
 			this.repeterPassord = "";
 			this.repeterFeil = "Passordene matcher ikke.";
 		}
@@ -91,5 +88,29 @@ public class Registrering {
 
 	public void setRepeterPassord(String repeterPassord) {
 		this.repeterPassord = repeterPassord;
+	}
+	
+	public String getPassordFeil() {
+		return passordFeil;
+	}
+
+	public void setPassordFeil(String passordFeil) {
+		this.passordFeil = passordFeil;
+	}
+
+	public String getTlfFeil() {
+		return tlfFeil;
+	}
+
+	public void setTlfFeil(String tlfFeil) {
+		this.tlfFeil = tlfFeil;
+	}
+
+	public String getRepeterFeil() {
+		return repeterFeil;
+	}
+
+	public void setRepeterFeil(String repeterFeil) {
+		this.repeterFeil = repeterFeil;
 	}
 }

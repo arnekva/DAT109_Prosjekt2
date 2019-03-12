@@ -40,20 +40,19 @@ public class RegistreringServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		Registrering registrering = new Registrering(request, StandEAO);
+		Registrering registrering = new Registrering(request,StandEAO);
 		
 		if(registrering.erAlleFeltGyldig()) {
 			User user = registrering.newUser();
-			request.getSession().removeAttribute("registrering");
+			request.getSession().removeAttribute("Registrering");
 			request.getSession().setAttribute("User", user);
 			StandEAO.leggTilBruker(user);
 			response.sendRedirect("stands");
 		}else {
 			registrering.genererFeilmelding();
-			request.getSession().setAttribute("registrering", registrering);
+			request.getSession().setAttribute("Registrering", registrering);
 			response.sendRedirect("registrering");
 		}
 	}
-
 }
 
