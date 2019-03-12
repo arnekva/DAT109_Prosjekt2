@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.servlet.http.HttpServletRequest;
 
 @Entity
 @Table(name = "stand", schema = "expo2019")
@@ -36,6 +37,21 @@ public class Stand implements Comparable<Stand>{
 		this.lokasjon = lokasjon;
 		this.bildeurl = bildeurl;
 		this.qrUrl = qrUrl;
+		kalkulertscore = 0.0;
+	}
+	
+	public Stand(HttpServletRequest request) {
+		tittel = (String) request.getParameter("tittel");
+		beskrivelse = (String) request.getParameter("beskrivelse");
+		gruppenavn = (String) request.getParameter("gruppenavn");
+		lokasjon = (String) request.getParameter("lokasjon");
+		bildeurl = (String) request.getParameter("bildeurl");
+		kalkulertscore = 0.0;
+	}
+	
+	public boolean hasValidInput() {
+		return (tittel != null && beskrivelse != null && gruppenavn != null && lokasjon != null
+				&& bildeurl != null); 
 	}
 
 	public int getStandid() {
