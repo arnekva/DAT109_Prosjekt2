@@ -11,15 +11,18 @@ public class Registrering {
 	private String repeterPassord;
 	private String repeterFeil;
 	
-	private String tillatpassord = "^[a-zæøåA-ZÆØÅ0-9 .]+$";	
+	private String tillatpassord = "^[a-zæøåA-ZÆØÅ0-9 .]+$";
 	
-	public Registrering(HttpServletRequest request) {
+	private StandEAO StandEAO;
+	
+	public Registrering(HttpServletRequest request, StandEAO StandEAO) {
 		this.passord = (String) request.getParameter("passord");
 		this.tlf = (String) request.getParameter("tlf");
 		this.repeterPassord = (String) request.getParameter("repeterPassord");
 		this.passordFeil = "";
 		this.tlfFeil = "";
 		this.repeterFeil = "";
+		this.StandEAO = StandEAO;
 	}
 	
 	public boolean erAlleFeltGyldig() {
@@ -37,19 +40,33 @@ public class Registrering {
 	}
 	
 	public boolean erPassordGyldig(String passord) {
-		return passord.matches(tillatpassord) && passord != null;
+		return passord.matches(tillatpassord) && passord != null && passord.length() > 4;
 	}
 	
 	public boolean erRepeterGyldig(String repeterPassord) {
 		return erPassordGyldig(this.passord) && repeterPassord.equals(this.passord);
 	}
 	
-	 newUser() {
-		
-		return tlf;
+	public User newUser() {
+		User user = StandEAO.hentBrukerPaaPK(Integer.parseInt(this.tlf));
+		return user;
 	}
 	
 	public void genererFeilmelding() {
+		if(!erPassordGyldig(passord)) {
+			this.passord = "";
+			this.repeterPassord = "";
+			this.passordFeil = "Ugyldig Passord. Passordet må være minst 4 karakterer langt.";
+		}
+		if(!erRepeterGyldig(repeterPassord)) {
+			this.passord = "";
+			this.repeterPassord = "";
+			this.repeterFeil = "Passordene matcher ikke.";
+		}
+		if(!erTlfGyldig(tlf)) {
+			this.tlf = "";
+			this.tlfFeil = "Du har ikke skrevet inn et gyldig nummer. 8 siffer.";
+		}
 	}
 
 	public String getPassord() {
@@ -60,11 +77,11 @@ public class Registrering {
 		this.passord = passord;
 	}
 
-	public int getTlf() {
+	public String getTlf() {
 		return tlf;
 	}
 
-	public void setTlf(int tlf) {
+	public void setTlf(String tlf) {
 		this.tlf = tlf;
 	}
 
