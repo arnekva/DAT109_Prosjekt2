@@ -37,8 +37,7 @@ public class LoggInn {
 		try {
 			if (isInputValid()) {
 				User user = hentUser();
-				//Rediger return statement når krypterings metodene er implementert
-				return true;
+				return PassordUtil.sjekkPassord(this.passord, user.getPassord());
 			} else {
 				return false;
 			} 

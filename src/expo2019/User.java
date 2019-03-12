@@ -30,6 +30,13 @@ public class User {
 	public void setTlfnr(int tlfnr) {
 		this.tlfnr = tlfnr;
 	}
-    
+
+	public String getPassord() {
+		return passord;
+	}
+
+	public void setPassord(String passord) {
+		this.passord = passord;
+	}
     
 }
