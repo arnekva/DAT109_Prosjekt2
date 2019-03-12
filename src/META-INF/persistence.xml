@@ -9,6 +9,12 @@
 		<class>expo2019.User</class>
 		<class>expo2019.Stand</class>
 		<class>expo2019.StandRating</class>
+		<class>expo2019.LoggInn</class>
+		<class>expo2019.LeggTilStandServlet</class>
+		<class>expo2019.LoggInnServlet</class>
+		<class>expo2019.StandEAO</class>
+		<class>expo2019.StandListeServlet</class>
+		<class>expo2019.StandRatingServlet</class>
 		<properties>
 			<property name="eclipselink.weaving" value="false" />
 		</properties>
