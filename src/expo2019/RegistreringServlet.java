@@ -46,7 +46,6 @@ public class RegistreringServlet extends HttpServlet {
 			User user = registrering.newUser();
 			request.getSession().removeAttribute("Registrering");
 			request.getSession().setAttribute("User", user);
-			StandEAO.leggTilBruker(user);
 			response.sendRedirect("stands");
 		}else {
 			registrering.genererFeilmelding();

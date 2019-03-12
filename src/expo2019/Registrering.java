@@ -11,7 +11,7 @@ public class Registrering {
 	private String repeterPassord;
 	private String repeterFeil;
 	
-	private String tillatpassord = "^[a-zæøåA-ZÆØÅ0-9 .]+$";
+	private String tillatpassord = "^[a-zÃ¦Ã¸Ã¥A-ZÃ†Ã˜Ã…0-9 .]+$";
 	
 	private StandEAO StandEAO;
 	
@@ -54,7 +54,7 @@ public class Registrering {
 	public void genererFeilmelding() {
 		if(!erPassordGyldig(passord)) {
 			this.passord = "";
-			this.passordFeil = "Ugyldig Passord. Passordet må være minst 4 karakterer langt.";
+			this.passordFeil = "Ugyldig Passord. Passordet mï¿½ vï¿½re minst 4 karakterer langt.";
 		}
 		if(!erRepeterGyldig(repeterPassord)) {
 			this.repeterPassord = "";
