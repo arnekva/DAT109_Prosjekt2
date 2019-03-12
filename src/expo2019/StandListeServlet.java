@@ -17,14 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/stands")
 public class StandListeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public StandListeServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
 
     @EJB
     private StandEAO standEAO;
