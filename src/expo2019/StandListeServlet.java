@@ -35,10 +35,9 @@ public class StandListeServlet extends HttpServlet {
 	
 		List<Stand> standliste = standEAO.hentAlleStands();
 		
-		
 		request.getSession().setAttribute("standliste", standliste);
 		
-		request.getRequestDispatcher("WEB-INF/stands.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/standliste.jsp").forward(request, response);
 	}
 
 	/**
