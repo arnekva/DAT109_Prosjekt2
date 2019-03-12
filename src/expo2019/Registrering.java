@@ -37,19 +37,35 @@ public class Registrering {
 	}
 	
 	public boolean erPassordGyldig(String passord) {
-		return passord.matches(tillatpassord) && passord != null;
+		return passord.matches(tillatpassord) && passord != null && passord.length() > 4;
 	}
 	
 	public boolean erRepeterGyldig(String repeterPassord) {
 		return erPassordGyldig(this.passord) && repeterPassord.equals(this.passord);
 	}
 	
-	 newUser() {
+	public User newUser() {
+		int tlf2 = Integer.parseInt(this.tlf);
+		User user = new User(tlf2, this.passord);
 		
-		return tlf;
+		return user;
 	}
 	
 	public void genererFeilmelding() {
+		if(!erPassordGyldig(passord)) {
+			this.passord = "";
+			this.repeterPassord = "";
+			this.passordFeil = "Ugyldig Passord. Passordet må være minst 4 karakterer langt.";
+		}
+		if(!erRepeterGyldig(repeterPassord)) {
+			this.passord = "";
+			this.repeterPassord = "";
+			this.repeterFeil = "Passordene matcher ikke.";
+		}
+		if(!erTlfGyldig(tlf)) {
+			this.tlf = "";
+			this.tlfFeil = "Du har ikke skrevet inn et gyldig nummer. 8 siffer.";
+		}
 	}
 
 	public String getPassord() {
@@ -60,11 +76,11 @@ public class Registrering {
 		this.passord = passord;
 	}
 
-	public int getTlf() {
+	public String getTlf() {
 		return tlf;
 	}
 
-	public void setTlf(int tlf) {
+	public void setTlf(String tlf) {
 		this.tlf = tlf;
 	}
 
