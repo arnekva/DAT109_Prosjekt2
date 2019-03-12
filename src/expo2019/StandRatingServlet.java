@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class StandRatingServlet
  */
-@WebServlet("/StandRatingServlet")
+@WebServlet("/score")
 public class StandRatingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
