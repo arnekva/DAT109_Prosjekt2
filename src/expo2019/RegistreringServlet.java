@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class RegistreringServlet
  */
-@WebServlet("/RegistreringServlet")
+@WebServlet("/registrering")
 public class RegistreringServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -40,7 +40,7 @@ public class RegistreringServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		Registrering registrering = new Registrering();
+		Registrering registrering = new Registrering(request);
 		
 		if(registrering.erAlleFeltGyldig()) {
 			User user = registrering.newUser();
