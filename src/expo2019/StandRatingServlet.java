@@ -33,7 +33,7 @@ public class StandRatingServlet extends HttpServlet {
 			Stand.sorter(stands);
 			request.setAttribute("stands", stands);
 			
-			request.getRequestDispatcher("WEB-INF/ratings.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/score.jsp").forward(request, response);
 		}
 		
 		
