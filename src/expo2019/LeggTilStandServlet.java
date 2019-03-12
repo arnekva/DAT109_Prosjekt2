@@ -2,6 +2,7 @@ package expo2019;
 
 import java.io.IOException;
 
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,31 +16,53 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/LeggTilStandServlet")
 public class LeggTilStandServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public LeggTilStandServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
+	
+	@EJB
+	private StandEAO standEAO;
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		request.getRequestDispatcher("WEB-INF/logginn.jsp").forward(request, response);
+		request.getSession().removeAttribute("feilmelding");
+		HttpSession session = request.getSession(false);
+		if (session.getAttribute("admin") == null) {
+			response.sendRedirect("stands" + "?noAdmin");	
+		} else {
+			if (request.getParameter("invalidInput") != null) {
+				String feilmelding = "Ugyldig input i registrering av stand.";
+				request.getSession().setAttribute("feilmelding", feilmelding);
+			}
+			request.getRequestDispatcher("WEB-INF/leggtilstand.jsp").forward(request, response);
+		}
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
 		
-		HttpSession sesjon = request.getSession();
+		HttpSession session = request.getSession(false);
+		if(session.getAttribute("admin") == null) {
+			response.sendRedirect("stands" + "?noAdmin");
+		}
+		Stand stand = new Stand(request);
+		if (!stand.hasValidInput()) {
+			response.sendRedirect("LeggTilStandServlet" + "?invalidInput");
+		} else {
+			Integer id;
+			try {
+				id = standEAO.hentNesteId();
+			} catch (NullPointerException e) {
+				id = 1;
+			}
+			//TODO: Fiks link
+			String qr = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" 
+			+ "INSERT URL HER" + "?id=" + id;
+			stand.setQrUrl(qr);
+			standEAO.leggTilStand(stand);
+			response.sendRedirect("stand");
+		}
+		
 		
 		//TODO: Valider sesjon, og hent ut info fra parameterer, opprett Standobjekt og persist via EAO.
 	}

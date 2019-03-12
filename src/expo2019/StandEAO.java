@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 
@@ -23,6 +24,14 @@ public class StandEAO {
 
 		return em.find(Stand.class, standid);
 
+	}
+	
+	public int hentNesteId() {
+		Integer id = null;
+		String sql = "Select MAX(Id) FROM Stand";
+		Query query = em.createNativeQuery(sql, Integer.class);
+		id = (Integer) query.getSingleResult();
+		return id + 1;
 	}
 
 	public List<Stand> hentAlleStands() {
