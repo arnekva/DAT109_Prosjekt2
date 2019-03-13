@@ -20,29 +20,17 @@ import javax.servlet.http.HttpSession;
 public class LoggInnServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public LoggInnServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
+   
     @EJB
     private StandEAO standEAO;
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getSession().removeAttribute("userFeilmelding");
 		HttpSession sesjon = request.getSession(false);
-		if (sesjon != null && sesjon.getAttribute("bruker") != null) {
-			response.sendRedirect("standliste" + "?alreadyLoggedIn");
+		if (sesjon.getAttribute("bruker") != null || sesjon.getAttribute("admin") != null) {
+			response.sendRedirect("stands" + "?alreadyLoggedIn");
 		} else {
-			if (request.getParameter("noUser") != null) {
-				String userFeilmelding = "Det er kun registrerte brukere som får se standlisten.";
-				request.getSession().setAttribute("userFeilmelding", userFeilmelding);
-			}
 			request.getRequestDispatcher("WEB-INF/logginn.jsp").forward(request, response);
 		}
 	}
@@ -68,7 +56,6 @@ public class LoggInnServlet extends HttpServlet {
 			response.sendRedirect("stands");
 		}else {
 			logginn.genererFeilmelding();
-			request.getSession().removeAttribute("userFeilmelding");
 			request.getSession().setAttribute("logginn", logginn);
 			response.sendRedirect("logginn");
 		}
