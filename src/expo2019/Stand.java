@@ -4,6 +4,8 @@ import java.util.Collections;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 public class Stand implements Comparable<Stand>{
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY, generator="custom")
 	private int standid;
 
 	private String tittel;
