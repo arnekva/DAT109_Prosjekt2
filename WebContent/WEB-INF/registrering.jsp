@@ -32,5 +32,7 @@
             </div>
         </fieldset>
     </form>
+    <p>Har du allerede en bruker?</p>
+	<p><a href="logginn">Logg inn her</a></p>
 </body>
 </html>
