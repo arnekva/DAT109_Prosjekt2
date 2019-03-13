@@ -24,6 +24,8 @@ public class StandRating {
 	
 	
 	private double rating;
+	
+	public StandRating() {}
 
 
 	public StandRating(User user, Stand stand, double rating) {
