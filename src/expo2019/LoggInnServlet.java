@@ -60,7 +60,11 @@ public class LoggInnServlet extends HttpServlet {
 			sesjon = request.getSession(true);
 			//sesjon.setMaxInactiveInterval(100);
 			User user = logginn.hentUser();
-			sesjon.setAttribute("bruker", user);
+			if (user.getTlfnr() == 99999999) {
+				sesjon.setAttribute("admin", user);
+			} else {
+				sesjon.setAttribute("bruker", user);
+			}
 			response.sendRedirect("stands");
 		}else {
 			logginn.genererFeilmelding();
