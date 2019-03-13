@@ -56,11 +56,11 @@ public class LeggTilStandServlet extends HttpServlet {
 			+ "localhost:8080/DAT109_Prosjekt3/stand" + "?id=" + id;
 			stand.setQrUrl(qr);
 			standEAO.leggTilStand(stand);
-			response.sendRedirect("stand");
+			response.sendRedirect("stands");
 		}
 		
 		
-		//TODO: Valider sesjon, og hent ut info fra parameterer, opprett Standobjekt og persist via EAO.
+		
 	}
 
 }
