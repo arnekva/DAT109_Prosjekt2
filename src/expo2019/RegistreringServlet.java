@@ -45,7 +45,11 @@ public class RegistreringServlet extends HttpServlet {
 		if(registrering.erAlleFeltGyldig()) {
 			User user = registrering.newUser();
 			request.getSession().removeAttribute("Registrering");
-			request.getSession().setAttribute("User", user);
+			if (user.getTlfnr() == 99999999) {
+				request.getSession().setAttribute("admin", user);
+			} else {
+				request.getSession().setAttribute("user", user);
+			}
 			response.sendRedirect("stands");
 		}else {
 			registrering.genererFeilmelding();
