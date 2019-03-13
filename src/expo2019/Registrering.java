@@ -23,13 +23,26 @@ public class Registrering {
 	}
 	
 	public boolean erAlleFeltGyldig() {
-		return (erTlfGyldig(this.tlf)) && (erPassordGyldig(this.passord)) && (erRepeterGyldig(this.repeterPassord));
+		return (erTlfGyldig(this.tlf)) && erTlfLedig(this.tlf) && (erPassordGyldig(this.passord)) && (erRepeterGyldig(this.repeterPassord));
+	}
+	
+	public boolean erTlfLedig(String tlf) {
+		if (erTlfGyldig(tlf)) {
+			try {
+				int nr = Integer.parseInt(tlf);
+				User eksistenssjekk = standEAO.hentBrukerPaaPK(nr);
+				return false;
+			} catch (Exception e) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public boolean erTlfGyldig(String tlf) {
 		try {
 			int nr = Integer.parseInt(tlf);
-			return(10000000 <= nr) && (nr <= 99999999);
+			return((90000000 <= nr) && (nr <= 99999999) || (40000000 <= nr) && (nr <= 49999999));
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
 			return false;
@@ -55,11 +68,15 @@ public class Registrering {
 	public void genererFeilmelding() {
 		if(!erPassordGyldig(passord)) {
 			this.passord = "";
-			this.passordFeil = "Ugyldig Passord. Passordet m� v�re minst 4 karakterer langt.";
+			this.passordFeil = "Ugyldig Passord. Passordet må være minst 4 karakterer langt.";
 		}
 		if(!erRepeterGyldig(repeterPassord)) {
 			this.repeterPassord = "";
 			this.repeterFeil = "Passordene matcher ikke.";
+		}
+		if(!erTlfLedig(tlf)) {
+			this.tlf = "";
+			this.tlfFeil = "Nummeret er allerede registrert. Vennligst logg inn.";
 		}
 		if(!erTlfGyldig(tlf)) {
 			this.tlf = "";
