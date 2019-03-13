@@ -30,7 +30,7 @@ public class LoggInnServlet extends HttpServlet {
 		if (sesjon == null) {
 			request.getRequestDispatcher("WEB-INF/logginn.jsp").forward(request, response);
 		} else {
-			if (sesjon.getAttribute("bruker") != null || sesjon.getAttribute("admin") != null) {
+			if (sesjon.getAttribute("user") != null || sesjon.getAttribute("admin") != null) {
 				response.sendRedirect("stands" + "?alreadyLoggedIn");
 			} else {
 				request.getRequestDispatcher("WEB-INF/logginn.jsp").forward(request, response);
