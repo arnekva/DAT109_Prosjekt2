@@ -31,7 +31,9 @@ public class StandRating {
 		this.stand = stand;
 		this.rating = rating;
 	}
-
+	
+	public StandRating() {}
+	
 
 	public User getUser() {
 		return user;
