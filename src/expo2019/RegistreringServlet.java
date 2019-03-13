@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class RegistreringServlet
@@ -43,8 +44,12 @@ public class RegistreringServlet extends HttpServlet {
 		Registrering registrering = new Registrering(request,StandEAO);
 		
 		if(registrering.erAlleFeltGyldig()) {
+			HttpSession sesjon = request.getSession(false);
+			if (sesjon != null) {
+				sesjon.invalidate();
+			}
+			sesjon = request.getSession(true);
 			User user = registrering.newUser();
-			request.getSession().removeAttribute("Registrering");
 			if (user.getTlfnr() == 99999999) {
 				request.getSession().setAttribute("admin", user);
 			} else {
