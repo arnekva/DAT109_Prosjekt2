@@ -6,8 +6,8 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class CompositeKey {
 	
-	@Column(name = "tlfnr")
-	private int tlfnr;
-	@Column(name = "standid")
-	private int standid;
+	@Column(name = "bruker")
+	private int user;
+	@Column(name = "stand")
+	private int stand;
 }
