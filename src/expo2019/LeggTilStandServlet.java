@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class LeggTilStandServlet
  */
-@WebServlet("/LeggTilStandServlet")
+@WebServlet("/leggtil")
 public class LeggTilStandServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
