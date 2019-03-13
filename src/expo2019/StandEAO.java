@@ -27,11 +27,19 @@ public class StandEAO {
 	}
 	
 	public int hentNesteId() {
-		Integer id = null;
-		String sql = "Select MAX(Id) FROM Stand";
-		Query query = em.createNativeQuery(sql, Integer.class);
-		id = (Integer) query.getSingleResult();
-		return id + 1;
+		
+		try {
+			List<Stand> alleStands = hentAlleStands();
+			Stand siste = alleStands.get(0);
+			for (int i = 1; i < alleStands.size(); i++) {
+				if (alleStands.get(i).getStandid() > siste.getStandid()) {
+					siste = alleStands.get(i);
+				}
+			}
+			return siste.getStandid() + 1;
+		} catch (Exception e) {
+			return 1;
+		}
 	}
 
 	public List<Stand> hentAlleStands() {

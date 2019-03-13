@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class LeggTilStandServlet
  */
-@WebServlet("/LeggTilStandServlet")
+@WebServlet("/leggtil")
 public class LeggTilStandServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -49,15 +49,11 @@ public class LeggTilStandServlet extends HttpServlet {
 		if (!stand.hasValidInput()) {
 			response.sendRedirect("LeggTilStandServlet" + "?invalidInput");
 		} else {
-			Integer id;
-			try {
-				id = standEAO.hentNesteId();
-			} catch (NullPointerException e) {
-				id = 1;
-			}
+			Integer id = standEAO.hentNesteId();
+			System.out.println(id);
 			//TODO: Fiks link
 			String qr = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" 
-			+ "INSERT URL HER" + "?id=" + id;
+			+ "localhost:8080/DAT109_Prosjekt3/stand" + "?id=" + id;
 			stand.setQrUrl(qr);
 			standEAO.leggTilStand(stand);
 			response.sendRedirect("stand");
