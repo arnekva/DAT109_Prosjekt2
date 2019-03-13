@@ -61,7 +61,7 @@ public class LoggInnServlet extends HttpServlet {
 			//sesjon.setMaxInactiveInterval(100);
 			User user = logginn.hentUser();
 			sesjon.setAttribute("bruker", user);
-			response.sendRedirect("standliste");
+			response.sendRedirect("stands");
 		}else {
 			logginn.genererFeilmelding();
 			request.getSession().removeAttribute("userFeilmelding");
