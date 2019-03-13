@@ -9,7 +9,6 @@
 </head>
 <body>
 	<h2>Logg inn</h2>
-	<p>Det er kun registrerte deltagere som får se deltagerlisten.</p>
 	<p>
 		<font color="red">${logginn.feilmelding}</font>
 	</p>
