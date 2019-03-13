@@ -74,13 +74,13 @@ public class Registrering {
 			this.repeterPassord = "";
 			this.repeterFeil = "Passordene matcher ikke.";
 		}
-		if(!erTlfGyldig(tlf)) {
-			this.tlf = "";
-			this.tlfFeil = "Du har ikke skrevet inn et gyldig nummer. 8 siffer.";
-		}
 		if(!erTlfLedig(tlf)) {
 			this.tlf = "";
 			this.tlfFeil = "Nummeret er allerede registrert. Vennligst logg inn.";
+		}
+		if(!erTlfGyldig(tlf)) {
+			this.tlf = "";
+			this.tlfFeil = "Du har ikke skrevet inn et gyldig nummer. 8 siffer.";
 		}
 	}
 
