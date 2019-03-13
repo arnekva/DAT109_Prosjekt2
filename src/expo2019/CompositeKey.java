@@ -7,7 +7,7 @@ import javax.persistence.Embeddable;
 public class CompositeKey {
 	
 	@Column(name = "bruker")
-	private int bruker;
+	private int user;
 	@Column(name = "stand")
 	private int stand;
 }
