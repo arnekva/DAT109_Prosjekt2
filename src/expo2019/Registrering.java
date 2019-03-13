@@ -13,12 +13,13 @@ public class Registrering {
 	
 	private String tillatpassord = "^[a-zæøåA-ZÆØÅ0-9 .]+$";
 	
-	private StandEAO StandEAO;
+	private StandEAO standEAO;
 	
 	public Registrering(HttpServletRequest request, StandEAO StandEAO) {
 		this.passord = (String) request.getParameter("passord");
 		this.tlf = (String) request.getParameter("tlf");
 		this.repeterPassord = (String) request.getParameter("repeterPassord");
+		this.standEAO = StandEAO;
 	}
 	
 	public boolean erAlleFeltGyldig() {
@@ -47,7 +48,7 @@ public class Registrering {
 		int tlf2 = Integer.parseInt(this.tlf);
 		String passordKryptert = PassordUtil.krypterPassord(this.passord);
 		User user = new User(tlf2, passordKryptert);
-		StandEAO.leggTilBruker(user);
+		standEAO.leggTilBruker(user);
 		return user;
 	}
 	
