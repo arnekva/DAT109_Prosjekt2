@@ -24,7 +24,7 @@ public class LoggUtServlet extends HttpServlet {
 	    if( sesjon != null) {
         	sesjon.invalidate();
         }
-		request.getRequestDispatcher("WEB-INF/logginn.jsp").forward(request, response);
+		response.sendRedirect("logginn");
 	}
 
 }
