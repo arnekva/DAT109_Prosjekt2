@@ -56,9 +56,9 @@ public class StandEAO {
 		}
 	}
 	
-//	public synchronized void leggTilStandRating(StandRating standrating) {
-//		em.persist(standrating);
-//	}
+	public synchronized void leggTilStandRating(StandRating standrating) {
+		em.persist(standrating);
+	}
 	public synchronized void leggTilBruker(User user) {
 		em.persist(user);
 	}
