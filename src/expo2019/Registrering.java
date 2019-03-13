@@ -19,7 +19,6 @@ public class Registrering {
 		this.passord = (String) request.getParameter("passord");
 		this.tlf = (String) request.getParameter("tlf");
 		this.repeterPassord = (String) request.getParameter("repeterPassord");
-		this.StandEAO = StandEAO;
 	}
 	
 	public boolean erAlleFeltGyldig() {
@@ -46,7 +45,8 @@ public class Registrering {
 	
 	public User newUser() {
 		int tlf2 = Integer.parseInt(this.tlf);
-		User user = new User(tlf2, this.passord);
+		String passordKryptert = PassordUtil.krypterPassord(this.passord);
+		User user = new User(tlf2, passordKryptert);
 		StandEAO.leggTilBruker(user);
 		return user;
 	}
