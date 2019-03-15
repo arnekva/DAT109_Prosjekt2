@@ -86,6 +86,6 @@ Du kan også vinne pris for beste video. Det gjør du ved å lage en kort presen
 
   </div>
 
-  <div class="footer">© HvL Expo 2019</div>
+  <div class="footer">� HvL Expo 2019</div>
 </body>
 </html>
