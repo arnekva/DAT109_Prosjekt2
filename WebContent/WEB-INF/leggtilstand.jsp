@@ -781,14 +781,14 @@ text-overflow: ellipsis;
     </div>
     </div>
 <div class="container">
-<div class="backbutton"><img class="backimg" src="images/backbutton.png"/><a href="jury.jsp">Ta meg tilbake til juryfunksjonene</a></div>
+<div class="backbutton"><img class="backimg" src="images/backbutton.png"/><a href="jury.html">Ta meg tilbake til juryfunksjonene</a></div>
   <h1 class="header_name">Legg til en ny stand</h1>
 
   <div class="container1">
     <form id="leggtil" action="" method="post">
 
       <fieldset>
-        <input placeholder="Tittel pÃ¥ stand" type="text" name="tittel" tabindex="1" required autofocus>
+        <input placeholder="Tittel på stand" type="text" name="tittel" tabindex="1" required autofocus>
 
 
         <input placeholder="Gruppemedlemmer" type="text" name="gruppenavn" tabindex="2" required>
@@ -811,6 +811,6 @@ text-overflow: ellipsis;
 
 
   </div>
-  <div class="footer">Â© HvL Expo 2019</div>
+  <div class="footer">© HvL Expo 2019</div>
 </body>
 </html>

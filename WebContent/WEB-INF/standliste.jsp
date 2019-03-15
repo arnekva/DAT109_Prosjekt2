@@ -11,7 +11,7 @@
 
 <link rel="icon" href="images/favicon.png">
  <meta charset="UTF-8">
-<meta name=ârobotsâ content=âindexâ>
+<meta name="robots" content="index">
 <style>
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 @media only screen
