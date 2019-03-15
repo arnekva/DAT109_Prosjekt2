@@ -50,7 +50,7 @@
           <li ><a href="annet.jsp">Annet</a></li>
         <li ><a href="kontakt.jsp">Kontakt</a></li>
         <li ><a href="jury.jsp" >For Juryen</a></li>
-        <li ><a href="standliste.jsp">Stands</a></li>
+        <li ><a href="stands">Stands</a></li>
         <li class="active"><a href="hjem.jsp">Hjem</a></li>
   </ul>
     </div>
