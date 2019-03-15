@@ -20,12 +20,12 @@
   <div class="main">
     <div id="cssmenu">
       <ul>
-        <a href="hjem.html"><img class="logo"src="images/expo_logo.png"/></a>
-          <li ><a href="annet.html">Annet</a></li>
-        <li class="active"><a href="kontakt.html">Kontakt</a></li>
-        <li ><a href="jury.html" >For Juryen</a></li>
-        <li ><a href="standliste.html">Stands</a></li>
-        <li ><a href="hjem.html">Hjem</a></li>
+        <a href="hjem.jsp"><img class="logo"src="images/expo_logo.png"/></a>
+          <li ><a href="annet.jsp">Annet</a></li>
+        <li class="active"><a href="kontakt.jsp">Kontakt</a></li>
+        <li ><a href="jury.jsp" >For Juryen</a></li>
+        <li ><a href="stands.jsp">Stands</a></li>
+        <li ><a href="hjem.jsp">Hjem</a></li>
   </ul>
     </div>
 <div class="container">

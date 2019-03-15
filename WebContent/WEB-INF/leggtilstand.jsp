@@ -771,16 +771,16 @@ text-overflow: ellipsis;
   <div class="main">
     <div id="cssmenu">
       <ul>
-        <a href="hjem.html"><img class="logo"src="images/expo_logo.png"/></a>
-        <li ><a href="hjem.html">Hjem</a></li>
-        <li ><a href="standliste.html">Stands</a></li>
-        <li class="active"><a href="jury.html" >For Juryen</a></li>
-        <li ><a href="kontakt.html">Kontakt</a></li>
-        <li ><a href="annet.html">Annet</a></li>
+        <a href="hjem.jsp"><img class="logo"src="images/expo_logo.png"/></a>
+        <li ><a href="hjem.jsp">Hjem</a></li>
+        <li ><a href="stands">Stands</a></li>
+        <li class="active"><a href="jury.jsp" >For Juryen</a></li>
+        <li ><a href="kontakt.jsp">Kontakt</a></li>
+        <li ><a href="annet.jsp">Annet</a></li>
       </ul>
     </div>
 <div class="container">
-<div class="backbutton"><img class="backimg" src="images/backbutton.png"/><a href="jury.html">Ta meg tilbake til juryfunksjonene</a></div>
+<div class="backbutton"><img class="backimg" src="images/backbutton.png"/><a href="jury.jsp">Ta meg tilbake til juryfunksjonene</a></div>
   <h1 class="header_name">Legg til en ny stand</h1>
 
   <div class="container1">
