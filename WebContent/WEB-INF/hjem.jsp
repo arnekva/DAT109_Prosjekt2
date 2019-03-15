@@ -47,11 +47,11 @@
     <div id="cssmenu">
       <ul>
         <a href="hjem.html"><img class="logo"src="images/expo_logo.png"/></a>
-          <li ><a href="annet.html">Annet</a></li>
-        <li ><a href="kontakt.html">Kontakt</a></li>
-        <li ><a href="jury.html" >For Juryen</a></li>
-        <li ><a href="standliste.html">Stands</a></li>
-        <li class="active"><a href="hjem.html">Hjem</a></li>
+          <li ><a href="annet.jsp">Annet</a></li>
+        <li ><a href="kontakt.jsp">Kontakt</a></li>
+        <li ><a href="jury.jsp" >For Juryen</a></li>
+        <li ><a href="standliste.jsp">Stands</a></li>
+        <li class="active"><a href="hjem.jsp">Hjem</a></li>
   </ul>
     </div>
 
@@ -61,7 +61,7 @@
     <div class="container" style="margin-top:-250px;">
 
 <h1 class="header_name">HVL Expo 2019 - Bacheloroppgaver</h1>
-<p>Hvert år stiller avgangsstudenter ved FIN og FØS Campus Bergen ut sine prosjekter under en stor utstilling på Kronstad. Utstillingen er åpen for publikum, og det deles ut pengepremier til de beste utstillingene. Lykke til! </p>
+<p>Hvert �r stiller avgangsstudenter ved FIN og FØS Campus Bergen ut sine prosjekter under en stor utstilling på Kronstad. Utstillingen er åpen for publikum, og det deles ut pengepremier til de beste utstillingene. Lykke til! </p>
 <h1>Kort om expo:</h1>
 <p>
   <ul>
