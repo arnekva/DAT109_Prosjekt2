@@ -1,3 +1,5 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page language="java" contentType="text/html; charset=UTF-8" %>
 
 
 
@@ -8,7 +10,7 @@
 
 <link rel="icon" href="images/favicon.png">
  <meta charset="UTF-8">
-<meta name=”robots” content=”index”>
+<meta name=ârobotsâ content=âindexâ>
 <style>
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
 * {
@@ -785,7 +787,7 @@ text-overflow: ellipsis;
     <form id="leggtil" action="" method="post">
 
       <fieldset>
-        <input placeholder="Tittel på stand" type="text" name="tittel" tabindex="1" required autofocus>
+        <input placeholder="Tittel pÃ¥ stand" type="text" name="tittel" tabindex="1" required autofocus>
 
 
         <input placeholder="Gruppemedlemmer" type="text" name="gruppenavn" tabindex="2" required>
@@ -808,6 +810,6 @@ text-overflow: ellipsis;
 
 
   </div>
-  <div class="footer">© HvL Expo 2019</div>
+  <div class="footer">Â© HvL Expo 2019</div>
 </body>
 </html>
