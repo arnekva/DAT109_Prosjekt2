@@ -3,31 +3,56 @@
 <head>
 <meta charset="ISO-8859-1">
 <!-- Fra https://purecss.io/ -->
+<style>
+form {
+	margin: 0 auto;
+	width: 250px;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="css/main.css">
 <link rel="stylesheet"
 	href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
 <title>Logg inn</title>
 </head>
 <body>
-	<h2>Logg inn</h2>
-	<p>
-		<font color="red">${logginn.feilmelding}</font>
-	</p>
-	<form method="post" class="pure-form pure-form-aligned">
-		<fieldset>
-			<div class="pure-control-group">
-				<label for="mobil">Mobil:</label> <input type="text" name="mobil" />
+	<div class="main">
+		<div id="cssmenu">
+			<ul>
+				<a href="hjem.html"><img class="logo" src="images/expo_logo.png" /></a>
+				<li><a href="hjem.html">Hjem</a></li>
+				<li class="active"><a href="logginn">Logg inn</a></li>
+			</ul>
+		</div>
+
+		<div class="container">
+
+			<h1 class="header_name">Logg inn</h1>
+			<div align="center">
+				<p>
+					<font color="red">${logginn.feilmelding}</font>
+				</p>
 			</div>
-			<div class="pure-control-group">
-				<label for="passord">Passord:</label> <input type="password"
-					name="passord" />
+			<form method="post" class="pure-form pure-form-aligned">
+				<fieldset>
+					<div class="pure-control-group" align="center">
+						<input type="text" name="mobil" placeholder="Mobilnummer" />
+					</div>
+					<div class="pure-control-group" align="center">
+						<input type="password" name="passord" placeholder="Passord" />
+					</div>
+					<div align="center">
+						<button type="submit" class="pure-button pure-button-primary">Logg
+							inn</button>
+					</div>
+				</fieldset>
+			</form>
+			<div align="center">
+				<p>Har du ikke bruker?</p>
+				<p>
+					<a href="registrering">Registrer deg her</a>
+				</p>
 			</div>
-			<div class="pure-controls">
-				<button type="submit" class="pure-button pure-button-primary">Logg
-					inn</button>
-			</div>
-		</fieldset>
-	</form>
-	<p>Har du ikke bruker?</p>
-	<p><a href="registrering">Registrer deg her</a></p>
+		</div>
+	</div>
 </body>
 </html>

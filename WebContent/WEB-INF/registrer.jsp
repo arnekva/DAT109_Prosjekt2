@@ -1,36 +1,56 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <!-- Fra https://purecss.io/ -->
-<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
-<title>Registrering</title>
+<style>
+form {
+	margin: 0 auto;
+	width: 250px;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet"
+	href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+<title>EXPO 2019</title>
 </head>
 <body>
-    <h2>Registrering</h2>
+	<div class="main">
+		<div id="cssmenu">
+			<ul>
+				<a href="hjem.html"><img class="logo" src="images/expo_logo.png" /></a>
+				<li><a href="hjem.html">Hjem</a></li>
+				<li><a href="logginn">Logg inn</a></li>
+				<li class="active"><a href="registrering">Registrering</a></li>
+			</ul>
+		</div>
+	<div class="container">
+    
+	<h1 class="header_name">Registrering</h1>
     <form method="post" class="pure-form pure-form-aligned">
         <fieldset>
-            <div class="pure-control-group">
-                <label for="tlf">Tlf (8 siffer):</label> <input type="text"
-                    name="tlf" value="${Registrering.tlf}" /> 
+            <div align="center" class="pure-control-group">
+                <input type="text"
+                    name="tlf" value="${Registrering.tlf}" placeholder="Tlf (8 siffer)"/> 
                     <font color="red">${Registrering.tlfFeil}</font>
             </div>
-            <div class="pure-control-group">
-                <label for="password">Passord:</label> <input type="password"
-                    name="passord" value="" /> 
+            <div align="center" class="pure-control-group">
+                <input type="password"
+                    name="passord" value="" placeholder="Passord" /> 
                     <font color="red">${Registrering.passordFeil}</font>
             </div>
-            <div class="pure-control-group">
-                <label for="repeterPassord">Passord repetert:</label> <input
+            <div align="center" class="pure-control-group">
+                <input
                     type="password" name="repeterPassord"
-                    value="" /> 
+                    value="" placeholder="Repeter passordet"/> 
                     <font color="red">${Registrering.repeterFeil}</font>
             </div>
-            <div class="pure-controls">
+            <div align="center">
                 <button type="submit" class="pure-button pure-button-primary">Registrer</button>
             </div>
         </fieldset>
     </form>
+	</div>
+	</div>
 </body>
 </html>

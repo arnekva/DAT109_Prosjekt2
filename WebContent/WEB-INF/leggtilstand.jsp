@@ -777,6 +777,7 @@ text-overflow: ellipsis;
         <li class="active" ><a href="jury.html" >For Juryen</a></li>
         <li ><a href="kontakt.html">Kontakt</a></li>
         <li ><a href="annet.html">Annet</a></li>
+        <li ><a href="loggut">Logg ut</a>
       </ul>
     </div>
     </div>
