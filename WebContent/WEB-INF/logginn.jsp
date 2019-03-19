@@ -44,12 +44,12 @@
 
         <input placeholder="Passord" type="password" name="passord" tabindex="2" required>
 
-<p class="feilerror"><p>
+<p class="feilerror">${logginn.feilmelding}<p>
         <button name="submit" type="submit" id="leggtil-submit" data-submit="...Sending">Submit</button>
 
       </fieldset>
         </form>
-        <div class="backbutton" ><img class="backimg" src="images/backbutton.png"/><a href="registrering">Har du ikke bruker? Klikk her for Ã¥ registrere deg!</a></div>
+        <div class="backbutton" ><img class="backimg" src="images/backbutton.png"/><a href="registrering">Har du ikke bruker? Klikk her for å registrere deg!</a></div>
 
   </div>
 

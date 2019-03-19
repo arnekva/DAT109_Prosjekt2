@@ -14,10 +14,11 @@
 #leggtil input[type="text"],
 #leggtil input[type="email"],
 #leggtil input[type="tel"],
-#leggtil input[type="url"],
+#leggtil input[type="password"],
 #leggtil textarea,
 #leggtil button[type="submit"] {
   font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+
 }
 
 #leggtil {
@@ -51,19 +52,20 @@ fieldset {
 #leggtil input[type="text"],
 #leggtil input[type="email"],
 #leggtil input[type="tel"],
-#leggtil input[type="url"],
+#leggtil input[type="password"],
 #leggtil textarea {
   width: 100%;
   border: 1px solid #ccc;
   background: #FFF;
   margin: 0 0 5px;
   padding: 10px;
+
 }
 
 #leggtil input[type="text"]:hover,
 #leggtil input[type="email"]:hover,
 #leggtil input[type="tel"]:hover,
-#leggtil input[type="url"]:hover,
+#leggtil input[type="password"]:hover,
 #leggtil textarea:hover {
   -webkit-transition: border-color 0.3s ease-in-out;
   -moz-transition: border-color 0.3s ease-in-out;
@@ -79,13 +81,16 @@ fieldset {
 
 #leggtil button[type="submit"] {
   cursor: pointer;
-  width: 100%;
+  width: 50%;
   border: none;
   background: #004357;
   color: #FFF;
   margin: 0 0 5px;
   padding: 10px;
   font-size: 15px;
+  margin-left:auto;
+  margin-right:auto;
+
 }
 
 #leggtil button[type="submit"]:hover {
@@ -123,4 +128,18 @@ fieldset {
 
 :-ms-input-placeholder {
   color: #888;
+}
+.container1{
+text-align: center;
+  width:50%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+
+}
+.centerme{
+  margin-left:auto;
+  margin-right:auto;
+
 }
