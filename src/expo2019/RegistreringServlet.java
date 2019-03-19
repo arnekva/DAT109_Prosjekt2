@@ -53,7 +53,7 @@ public class RegistreringServlet extends HttpServlet {
 			if (user.getTlfnr() == 99999999) {
 				request.getSession().setAttribute("admin", user);
 			} else {
-				request.getSession().setAttribute("user", user);
+				request.getSession().setAttribute("bruker", user);
 			}
 			response.sendRedirect("stands");
 		}else {

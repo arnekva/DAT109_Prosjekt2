@@ -42,8 +42,9 @@ public class StandServlet extends HttpServlet {
 		if (!standEAO.kanKonverteres(standid)) {
 			response.sendRedirect("stand" + "?unknownStandId");
 		}
-
-		Stand stand = standEAO.hentStandPaaPK(Integer.parseInt(standid));
+		System.out.println("*****************"+standid);
+		int id = Integer.parseInt(standid);
+		Stand stand = standEAO.hentStandPaaPK(id);
 
 		if (sesjon.getAttribute("bruker") != null) {
 			erLoggetInn = true;
@@ -82,7 +83,7 @@ public class StandServlet extends HttpServlet {
 		StandRating standrating = new StandRating(user, stand, rating);
 
 		standEAO.leggTilStandRating(standrating);
-		response.sendRedirect("stand" + "?ratingValid");
+		response.sendRedirect("stand" + "?standid="+standid);
 
 	}
 
