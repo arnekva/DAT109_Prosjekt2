@@ -8,7 +8,7 @@
 
 <link rel="icon" href="images/favicon.png">
  <meta charset="UTF-8">
-<meta name=”robots” content=”index”>
+
 <style>
 
 </style>
@@ -40,6 +40,6 @@
       </div>
 
   </div>
-  <div class="footer">© HvL Expo 2019</div>
+  <div class="footer">� HvL Expo 2019</div>
 </body>
 </html>
