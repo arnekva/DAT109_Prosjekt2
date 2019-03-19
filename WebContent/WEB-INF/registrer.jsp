@@ -1,3 +1,6 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page language="java" contentType="text/html; charset=UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,7 +8,7 @@
 
 <link rel="icon" href="images/favicon.png">
  <meta charset="UTF-8">
-<meta name=”robots” content=”index”>
+<meta name=ârobotsâ content=âindexâ>
 <style>
 
 </style>
@@ -45,12 +48,12 @@
 
       </fieldset>
         </form>
-        <div class="backbutton" ><img class="backimg" src="images/backbutton.png"/><a href="logginn">Har du allerede bruker? Klikk her for å logge inn!</a></div>
+        <div class="backbutton" ><img class="backimg" src="images/backbutton.png"/><a href="logginn">Har du allerede bruker? Klikk her for Ã¥ logge inn!</a></div>
 
   </div>
 
 
   </div>
-  <div class="footer">© HvL Expo 2019</div>
+  <div class="footer">Â© HvL Expo 2019</div>
 </body>
 </html>
