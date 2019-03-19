@@ -25,6 +25,7 @@
         <li ><a href="kontakt.html">Kontakt</a></li>
         <li  class="active"><a href="jury" >For Juryen</a></li>
         <li ><a href="standliste.html">Stands</a></li>
+         <li ><a href="logginn">Logg inn</a></li>
         <li ><a href="hjem.html">Hjem</a></li>
   </ul>
     </div>
