@@ -30,7 +30,7 @@
         <a href="hjem.html"><img class="logo"src="images/expo_logo.png"/></a>
    <li ><a href="annet.html">Annet</a></li>
         <li ><a href="kontakt.html">Kontakt</a></li>
-        <li ><a href="jury.html" >For Juryen</a></li>
+        <li ><a href="jury" >For Juryen</a></li>
         <li class="active"><a href="stands">Stands</a></li>
         <li ><a href="logginn">Logg inn</a></li>
         <li ><a href="hjem.html">Hjem</a></li>

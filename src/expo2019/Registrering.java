@@ -67,7 +67,7 @@ public class Registrering {
 	public void genererFeilmelding() {
 		if(!erPassordGyldig(passord)) {
 			this.passord = "";
-			this.passordFeil = "Ugyldig Passord. Passordet må være minst 4 karakterer langt.";
+			this.passordFeil = "Ugyldig Passord. Passordet må være minst 5 karakterer langt.";
 		}
 		if(!erRepeterGyldig(repeterPassord)) {
 			this.repeterPassord = "";
