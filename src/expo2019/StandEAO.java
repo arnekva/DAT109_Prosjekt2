@@ -26,6 +26,14 @@ public class StandEAO {
 
 	}
 	
+	public double hentScorePaaPk(int standid, int tlfnr) {
+		String sql = "SELECT * FROM EXPO2019.standrating WHERE tlfnr="+tlfnr+" AND standid="+standid;
+		Query query = em.createNativeQuery(sql, StandRating.class);
+		StandRating standrating = (StandRating) query.getSingleResult();
+		double score = standrating.getRating();
+		return score;
+	}
+	
 	public int hentNesteId() {
 		
 		try {
@@ -70,19 +78,5 @@ public class StandEAO {
 	public synchronized void leggTilBruker(User user) {
 		em.persist(user);
 	}
-	public double hentScorePaaPk(int standid, int tlfnr) {
-		TypedQuery<StandRating> query = em.createQuery("SELECT s FROM StandRating s WHERE s.tlfnr="+tlfnr+" AND s.standid="+standid, StandRating.class);
-		StandRating standrating = query.getSingleResult();
-		double score = standrating.getRating();
-		return score;
-	}
 	
-	public double hentAlleRating() {
-
-		List<StandRating> stands = null;
-		TypedQuery<StandRating> query = em.createQuery("SELECT e FROM StandRating e", StandRating.class);
-		stands = query.getResultList();
-		double rating = stands.get(0).getRating();
-		return rating;
-	}
 }
