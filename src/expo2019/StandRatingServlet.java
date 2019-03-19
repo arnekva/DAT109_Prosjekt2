@@ -31,7 +31,7 @@ public class StandRatingServlet extends HttpServlet {
 		}else {
 			List<Stand> stands = StandEAO.hentAlleStands();
 			Stand.sorter(stands);
-			double scoreTest = StandEAO.hentScorePaaPk(1, 99999999);
+			double scoreTest = StandEAO.hentAlleRating();
 			System.out.println(scoreTest);
 			request.getSession().setAttribute("stands", stands);
 			

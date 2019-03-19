@@ -71,9 +71,18 @@ public class StandEAO {
 		em.persist(user);
 	}
 	public double hentScorePaaPk(int standid, int tlfnr) {
-		TypedQuery<StandRating> query = em.createQuery("SELECT score FROM standrating WHERE tlfnr="+tlfnr+" AND standid="+standid, StandRating.class);
+		TypedQuery<StandRating> query = em.createQuery("SELECT s FROM StandRating s WHERE s.tlfnr="+tlfnr+" AND s.standid="+standid, StandRating.class);
 		StandRating standrating = query.getSingleResult();
 		double score = standrating.getRating();
 		return score;
+	}
+	
+	public double hentAlleRating() {
+
+		List<StandRating> stands = null;
+		TypedQuery<StandRating> query = em.createQuery("SELECT e FROM StandRating e", StandRating.class);
+		stands = query.getResultList();
+		double rating = stands.get(0).getRating();
+		return rating;
 	}
 }

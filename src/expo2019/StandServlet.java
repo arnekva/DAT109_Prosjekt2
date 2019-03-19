@@ -77,6 +77,7 @@ public class StandServlet extends HttpServlet {
 		}
 
 		User user = (User) sesjon.getAttribute("bruker");
+		System.out.println("**************" + user.getTlfnr());
 		Stand stand = standEAO.hentStandPaaPK(standid);
 		StandRating standrating = new StandRating(user, stand, rating);
 

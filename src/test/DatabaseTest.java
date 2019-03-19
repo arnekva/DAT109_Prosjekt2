@@ -2,19 +2,19 @@ package test;
 
 import javax.ejb.EJB;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import expo2019.StandEAO;
-import expo2019.StandRating;
+import expo2019.User;
 
 public class DatabaseTest {
 	
-	@EJB
-	private StandEAO standEAO;
-
-	@Test
-	public void hentRatingTest() {
-		StandRating sr =
-	}
+	
+//	@Test
+//	public void () {
+//		
+//	}
+	
 
 }
