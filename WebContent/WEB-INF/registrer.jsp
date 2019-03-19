@@ -36,14 +36,14 @@
 
       <fieldset>
         <input placeholder="Telefonnummer" type="tel" name="tlf" tabindex="1" required autofocus>
-        <p class="feilerror">${Registrering.tlffeil}</p>
+        <p class="feilerror">${Registrering.tlfFeil}</p>
 
 
         <input placeholder="Passord" type="password" name="passord" tabindex="2" required>
-<p class="feilerror">${Registrering.passordfeil}</p>
+<p class="feilerror">${Registrering.passordFeil}</p>
 
         <input placeholder="Passord repetert" type="password" name="repeterPassord" tabindex="3" required>
-        <p class="feilerror">${Registrering.repeterfeil}</p>
+        <p class="feilerror">${Registrering.repeterFeil}</p>
         <button class="centerme" name="submit" type="submit" id="leggtil-submit" data-submit="...Sending">Registrer deg</button>
 
       </fieldset>
