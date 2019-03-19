@@ -40,6 +40,7 @@
       </div>
 
   </div>
+  </div>
   <div class="footer">© HvL Expo 2019</div>
 </body>
 </html>
