@@ -141,3 +141,9 @@ td.text-center {
 td.text-right {
   text-align: right;
 }
+.clickable-link{
+  display:block;
+  text-decoration: none;
+  color:inherit;
+  height:100%;
+}

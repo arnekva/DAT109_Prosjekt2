@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,11 +5,11 @@
 
 <link rel="icon" href="images/favicon.png">
  <meta charset="UTF-8">
-<meta name=”robots” content=”index”>
 <style>
 
 </style>
 <link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/rating.css">
 
 </head>
 <body>
@@ -26,7 +23,6 @@
         <li ><a href="jury.html" >For Juryen</a></li>
         <li ><a href="kontakt.html">Kontakt</a></li>
         <li ><a href="annet.html">Annet</a></li>
-        <li ><a href="loggut">Logg ut</a>
       </ul>
     </div>
     </div>
@@ -39,9 +35,42 @@
 
     <div class="section_info"><h3 class="header_header">Beskrivelse: </h3>${stand.beskrivelse}</div>
     <div class="section_info"><h3 class="header_header">Gruppenavn: </h3>${stand.gruppenavn}</div>
+    <div class="section_info"><h3 class="header_header">Gi en rating</h3></div>
+    <form id="myForm" class="rating" method"post">
+    <label>
+      <input type="radio" name="stars" value="1" onclick="document.getElementById('myForm').submit();"/>
+      <span class="icon">★</span>
+    </label>
+    <label>
+      <input type="radio" name="stars" value="2" onclick="document.getElementById('myForm').submit();"/>
+      <span class="icon">★</span>
+      <span class="icon">★</span>
+    </label>
+    <label>
+      <input type="radio" name="stars" value="3" onclick="document.getElementById('myForm').submit();"/>
+      <span class="icon">★</span>
+      <span class="icon">★</span>
+      <span class="icon">★</span>
+    </label>
+    <label>
+      <input type="radio" name="stars" value="4" onclick="document.getElementById('myForm').submit();" />
+      <span class="icon">★</span>
+      <span class="icon">★</span>
+      <span class="icon">★</span>
+      <span class="icon">★</span>
+    </label>
+    <label>
+      <input type="radio" name="stars" value="5" onclick="document.getElementById('myForm').submit();"/>
+      <span class="icon">★</span>
+      <span class="icon">★</span>
+      <span class="icon">★</span>
+      <span class="icon">★</span>
+      <span class="icon">★</span>
+    </label>
+  </form>
     </div>
 
   </div>
-  <div class="footer">� HvL Expo 2019</div>
+  <div class="footer">© HvL Expo 2019</div>
 </body>
 </html>

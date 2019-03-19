@@ -37,16 +37,16 @@
 </div>
 <table class="table-fill">
 <thead>
-<tr>
+<tr >
 <th class="text-left">Navn</th>
 <th class="text-left">Score</th>
 </tr>
 </thead>
 <tbody class="table-hover">
 <c:forEach var="stands" items="${stands}" varStatus="loop">
-<tr>
-<td class="text-left">${stands.tittel}</td>
-<td class="text-left">${stands.kalkulertscore}</td>
+<tr class="clickable-row" data-href='url://hjem.html'>
+<td class="text-left"><a class="clickable-link" href="stand?standid=${stands.standid}">${stands.tittel}</a></td>
+<td class="text-left"><a class="clickable-link" href="stand?standid=${stands.standid}">${stands.kalkulertscore}</a></td>
 </tr>
 </c:forEach>
 
@@ -55,6 +55,7 @@
   </div>
   </div>
   <div class="footer">© HvL Expo 2019</div>
+
 </body>
 
 </html>
