@@ -786,7 +786,7 @@ text-overflow: ellipsis;
   <h1 class="header_name">Legg til en ny stand</h1>
 
   <div class="container1">
-    <form id="leggtil" action="" method="post">
+    <form id="leggtil" action="" method="post" accept-charset="UTF-8">
 
       <fieldset>
         <input placeholder="Tittel på stand" type="text" name="tittel" tabindex="1" required autofocus>
