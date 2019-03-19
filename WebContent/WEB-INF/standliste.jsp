@@ -666,7 +666,7 @@ text-overflow: ellipsis;
     <ul>
       <c:forEach var="stand" items="${standliste}" varStatus="loop">
       <li><span><a href="stand?standid=${stand.standid}"><img class="standListImage" src="${stand.bildeurl}"/></a></span>
-          <span class="infoText" style="font-style:bold">${stand.tittel}</span>
+          <span class="infoText" style="font-weight:bold">${stand.tittel}</span>
           <span class="infoText">${stand.beskrivelse}</span>
           <a href="stand?standid=${stand.standid}">Se mer...</a>
       </li>
