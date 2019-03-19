@@ -1,58 +1,59 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page language="java" contentType="text/html; charset=UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<!-- Fra https://purecss.io/ -->
+<title>Expo 2019</title>
+
+<link rel="icon" href="images/favicon.png">
+ <meta charset="UTF-8">
+<meta name=ârobotsâ content=âindexâ>
 <style>
-form {
-	margin: 0 auto;
-	width: 250px;
+#leggtil{
+
 }
 </style>
 <link rel="stylesheet" type="text/css" href="css/main.css">
-<link rel="stylesheet"
-	href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
-<title>Logg inn</title>
+<link rel="stylesheet" type="text/css" href="css/form.css">
 </head>
 <body>
-	<div class="main">
-		<div id="cssmenu">
-			<ul>
-				<a href="hjem.html"><img class="logo" src="images/expo_logo.png" /></a>
-				<li><a href="hjem.html">Hjem</a></li>
-				<li class="active"><a href="logginn">Logg inn</a></li>
-			</ul>
-		</div>
 
-		<div class="container">
+  <div class="main">
+    <div id="cssmenu">
+      <ul>
+        <a href="hjem.html"><img class="logo"src="images/expo_logo.png"/></a>
+          <li ><a href="annet.html">Annet</a></li>
+        <li ><a href="kontakt.html">Kontakt</a></li>
+        <li class="active"><a href="jury.html" >For Juryen</a></li>
+        <li ><a href="stands">Stands</a></li>
+        <li ><a href="hjem.html">Hjem</a></li>
+  </ul>
+    </div>
+<div class="container">
+  <h1 class="header_name">Logg inn</h1>
 
-			<h1 class="header_name">Logg inn</h1>
-			<div align="center">
-				<p>
-					<font color="red">${logginn.feilmelding}</font>
-				</p>
-			</div>
-			<form method="post" class="pure-form pure-form-aligned">
-				<fieldset>
-					<div class="pure-control-group" align="center">
-						<input type="text" name="mobil" placeholder="Mobilnummer" />
-					</div>
-					<div class="pure-control-group" align="center">
-						<input type="password" name="passord" placeholder="Passord" />
-					</div>
-					<div align="center">
-						<button type="submit" class="pure-button pure-button-primary">Logg
-							inn</button>
-					</div>
-				</fieldset>
-			</form>
-			<div align="center">
-				<p>Har du ikke bruker?</p>
-				<p>
-					<a href="registrering">Registrer deg her</a>
-				</p>
-			</div>
-		</div>
-	</div>
+  <div class="container1">
+    <form id="leggtil" action="" method="post">
+
+      <fieldset>
+
+        <input placeholder="Telefonnummer" type="tel" name="mobil" tabindex="1" required autofocus>
+
+
+        <input placeholder="Passord" type="password" name="passord" tabindex="2" required>
+
+<p class="feilerror"><p>
+        <button name="submit" type="submit" id="leggtil-submit" data-submit="...Sending">Submit</button>
+
+      </fieldset>
+        </form>
+        <div class="backbutton" ><img class="backimg" src="images/backbutton.png"/><a href="registrering">Har du ikke bruker? Klikk her for Ã¥ registrere deg!</a></div>
+
+  </div>
+
+
+  </div>
+  <div class="footer">Â© HvL Expo 2019</div>
 </body>
 </html>

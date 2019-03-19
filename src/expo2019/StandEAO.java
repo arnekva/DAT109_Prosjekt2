@@ -70,4 +70,10 @@ public class StandEAO {
 	public synchronized void leggTilBruker(User user) {
 		em.persist(user);
 	}
+	public double hentScorePaaPk(int standid, int tlfnr) {
+		TypedQuery<StandRating> query = em.createQuery("SELECT score FROM standrating WHERE tlfnr="+tlfnr+" AND standid="+standid, StandRating.class);
+		StandRating standrating = query.getSingleResult();
+		double score = standrating.getRating();
+		return score;
+	}
 }

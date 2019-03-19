@@ -1,56 +1,59 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page language="java" contentType="text/html; charset=UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<!-- Fra https://purecss.io/ -->
+<title>Expo 2019</title>
+
+<link rel="icon" href="images/favicon.png">
+ <meta charset="UTF-8">
+<meta name=ârobotsâ content=âindexâ>
 <style>
-form {
-	margin: 0 auto;
-	width: 250px;
-}
+
 </style>
 <link rel="stylesheet" type="text/css" href="css/main.css">
-<link rel="stylesheet"
-	href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
-<title>EXPO 2019</title>
+<link rel="stylesheet" type="text/css" href="css/form.css">
 </head>
 <body>
-	<div class="main">
-		<div id="cssmenu">
-			<ul>
-				<a href="hjem.html"><img class="logo" src="images/expo_logo.png" /></a>
-				<li><a href="hjem.html">Hjem</a></li>
-				<li><a href="logginn">Logg inn</a></li>
-				<li class="active"><a href="registrering">Registrering</a></li>
-			</ul>
-		</div>
-	<div class="container">
-    
-	<h1 class="header_name">Registrering</h1>
-    <form method="post" class="pure-form pure-form-aligned">
-        <fieldset>
-            <div align="center" class="pure-control-group">
-                <input type="text"
-                    name="tlf" value="${Registrering.tlf}" placeholder="Tlf (8 siffer)"/> 
-                    <font color="red">${Registrering.tlfFeil}</font>
-            </div>
-            <div align="center" class="pure-control-group">
-                <input type="password"
-                    name="passord" value="" placeholder="Passord" /> 
-                    <font color="red">${Registrering.passordFeil}</font>
-            </div>
-            <div align="center" class="pure-control-group">
-                <input
-                    type="password" name="repeterPassord"
-                    value="" placeholder="Repeter passordet"/> 
-                    <font color="red">${Registrering.repeterFeil}</font>
-            </div>
-            <div align="center">
-                <button type="submit" class="pure-button pure-button-primary">Registrer</button>
-            </div>
-        </fieldset>
-    </form>
-	</div>
-	</div>
+
+  <div class="main">
+    <div id="cssmenu">
+      <ul>
+        <a href="hjem.html"><img class="logo"src="images/expo_logo.png"/></a>
+          <li ><a href="annet.html">Annet</a></li>
+        <li ><a href="kontakt.html">Kontakt</a></li>
+        <li class="active"><a href="jury.html" >For Juryen</a></li>
+        <li ><a href="stands">Stands</a></li>
+        <li ><a href="hjem.html">Hjem</a></li>
+  </ul>
+    </div>
+<div class="container">
+  <h1 class="header_name">Registrer deg!</h1>
+
+  <div class="container1">
+    <form id="leggtil" action="" method="post">
+
+      <fieldset>
+        <input placeholder="Telefonnummer" type="tel" name="tlf" tabindex="1" required autofocus>
+        <p class="feilerror">${Registrering.tlffeil}</p>
+
+
+        <input placeholder="Passord" type="password" name="passord" tabindex="2" required>
+<p class="feilerror">${Registrering.passordfeil}</p>
+
+        <input placeholder="Passord repetert" type="password" name="repeterPassord" tabindex="3" required>
+        <p class="feilerror">${Registrering.repeterfeil}</p>
+        <button class="centerme" name="submit" type="submit" id="leggtil-submit" data-submit="...Sending">Submit</button>
+
+      </fieldset>
+        </form>
+        <div class="backbutton" ><img class="backimg" src="images/backbutton.png"/><a href="logginn">Har du allerede bruker? Klikk her for Ã¥ logge inn!</a></div>
+
+  </div>
+
+
+  </div>
+  <div class="footer">Â© HvL Expo 2019</div>
 </body>
 </html>
