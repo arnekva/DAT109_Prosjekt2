@@ -65,9 +65,9 @@ public class StandServlet extends HttpServlet {
 		if (sesjon == null || sesjon.getAttribute("bruker") == null) {
 			response.sendRedirect("logginn" + "?nosession");
 		}
-		String ratingParam = request.getParameter("rating");
+		String ratingParam = request.getParameter("stars");
 		double rating = 0;
-		int tlfnr = 0;
+
 		int standid = 0;
 		try {
 			rating = Double.parseDouble(ratingParam);
@@ -77,10 +77,10 @@ public class StandServlet extends HttpServlet {
 		}
 
 		User user = (User) sesjon.getAttribute("bruker");
+		Stand stand = standEAO.hentStandPaaPK(standid);
+		StandRating standrating = new StandRating(user, stand, rating);
 
-//		StandRating standrating = new StandRating(user, standid, rating);
-//
-//		standEAO.leggTilStandRating(standrating);
+		standEAO.leggTilStandRating(standrating);
 		response.sendRedirect("stand" + "?ratingValid");
 
 	}

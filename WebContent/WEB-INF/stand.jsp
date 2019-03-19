@@ -1,3 +1,6 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page language="java" contentType="text/html; charset=UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,7 +39,8 @@
     <div class="section_info"><h3 class="header_header">Beskrivelse: </h3>${stand.beskrivelse}</div>
     <div class="section_info"><h3 class="header_header">Gruppenavn: </h3>${stand.gruppenavn}</div>
     <div class="section_info"><h3 class="header_header">Gi en rating</h3></div>
-    <form id="myForm" class="rating" method"post">
+    <form id="myForm" class="rating" method="post">
+        <input type="hidden" value="${stand.standid}"/>
     <label>
       <input type="radio" name="stars" value="1" onclick="document.getElementById('myForm').submit();"/>
       <span class="icon">★</span>
@@ -67,6 +71,7 @@
       <span class="icon">★</span>
       <span class="icon">★</span>
     </label>
+
   </form>
     </div>
 
