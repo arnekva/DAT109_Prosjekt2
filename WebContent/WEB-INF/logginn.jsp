@@ -8,7 +8,7 @@
 
 <link rel="icon" href="images/favicon.png">
  <meta charset="UTF-8">
-<meta name=ârobotsâ content=âindexâ>
+
 <style>
 #leggtil{
 
@@ -54,6 +54,7 @@
   </div>
 
 
+  </div>
   </div>
   <div class="footer">Â© HvL Expo 2019</div>
 </body>
