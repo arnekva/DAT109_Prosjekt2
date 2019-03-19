@@ -10,9 +10,7 @@
  <meta charset="UTF-8">
 
 <style>
-#leggtil{
 
-}
 </style>
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/form.css">
@@ -44,8 +42,8 @@
 
         <input placeholder="Passord" type="password" name="passord" tabindex="2" required>
 
-<p class="feilerror">${logginn.feilmelding}<p>
-        <button name="submit" type="submit" id="leggtil-submit" data-submit="...Sending">Submit</button>
+
+        <button name="submit" type="submit" id="leggtil-submit" data-submit="...Sending">Logg inn</button>
 
       </fieldset>
         </form>

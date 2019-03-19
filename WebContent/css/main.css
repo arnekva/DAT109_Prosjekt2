@@ -624,4 +624,5 @@ text-overflow: ellipsis;
 }
 .feilerror{
   color:red;
+  text-align:center;
 }

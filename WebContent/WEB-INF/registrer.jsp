@@ -22,9 +22,9 @@
         <a href="hjem.html"><img class="logo"src="images/expo_logo.png"/></a>
           <li ><a href="annet.html">Annet</a></li>
         <li ><a href="kontakt.html">Kontakt</a></li>
-        <li class="active"><a href="jury.html" >For Juryen</a></li>
+        <li ><a href="jury.html" >For Juryen</a></li>
         <li ><a href="stands">Stands</a></li>
-        <li ><a href="logginn">Logg inn</a></li>
+        <li class="active"><a href="logginn">Logg inn</a></li>
         <li ><a href="hjem.html">Hjem</a></li>
   </ul>
     </div>
@@ -44,7 +44,7 @@
 
         <input placeholder="Passord repetert" type="password" name="repeterPassord" tabindex="3" required>
         <p class="feilerror">${Registrering.repeterfeil}</p>
-        <button class="centerme" name="submit" type="submit" id="leggtil-submit" data-submit="...Sending">Submit</button>
+        <button class="centerme" name="submit" type="submit" id="leggtil-submit" data-submit="...Sending">Registrer deg</button>
 
       </fieldset>
         </form>
