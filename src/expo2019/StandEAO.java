@@ -71,7 +71,7 @@ public class StandEAO {
 			rating += sr.getRating();
 		}
 		
-		rating = rating/resultat.size();
+		rating = (rating/resultat.size())/1.0;
 		
 		em.merge(stand);
 		stand.setKalkulertscore(rating);
