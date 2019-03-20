@@ -61,7 +61,7 @@
 
         <textarea placeholder="Beskrivelse av stand" type="text" name="beskrivelse" tabindex="5" value="${stand.beskrivelse}" required></textarea>
 
-	<input type="hidden" value="${stand.standid}">
+	<input type="hidden" name="standid" value="${stand.standid}">
         <button name="submit" type="submit" id="leggtil-submit" data-submit="...Sending">Submit</button>
       </fieldset>
         </form>

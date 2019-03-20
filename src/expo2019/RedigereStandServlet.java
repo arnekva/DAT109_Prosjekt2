@@ -50,7 +50,8 @@ public class RedigereStandServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		Redigere redigere = new Redigere(request,StandEAO);
+		Stand stand = StandEAO.hentStandPaaPK(Integer.parseInt(request.getParameter("standid")));
+		Redigere redigere = new Redigere(request,StandEAO, stand);
 		
 			HttpSession sesjon = request.getSession(false);
 			if (sesjon != null) {
