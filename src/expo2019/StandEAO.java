@@ -60,18 +60,18 @@ public class StandEAO {
 	}
 	
 	public double totalRating(Stand stand) {
-		int rating = 0;
+		double rating = 0;
+		String sql = "SELECT * FROM EXPO2019.standrating WHERE standid = "+stand.getStandid();
+		Query query = em.createNativeQuery(sql, StandRating.class);
+		List<StandRating> resultat = (List<StandRating>) query.getResultList();
 		
-		TypedQuery<Integer> query = em.createQuery("SELECT Rating FROM Standrating WHERE standid = "+stand.getStandid(), Integer.class);
-		List<Integer> resultat = query.getResultList();
-		
-		while(resultat.iterator().hasNext()) {
-			rating += resultat.iterator().next();
+		for (StandRating sr : resultat) {
+			rating += sr.getRating();
 		}
 		
 		rating = rating/resultat.size();
 		
-		return rating;
+		return rating/1.0;
 	}
 	
 	public User hentBrukerPaaPK(int tlfnr) {
