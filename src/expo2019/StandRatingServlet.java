@@ -26,8 +26,8 @@ public class StandRatingServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
-		if(session == null || session.getAttribute("admin") == null) {
-			response.sendRedirect("logginn" + "?noAdmin");
+		if(session.getAttribute("admin") == null) {
+			response.sendRedirect("stands" + "?noAdmin");
 		}else {
 			List<Stand> stands = StandEAO.hentAlleStands();
 			Stand.sorter(stands);
