@@ -62,6 +62,7 @@ public class StandEAO {
 	public double totalRating(Stand stand) {
 		double rating = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		
 		TypedQuery<Integer> query = em.createQuery("SELECT rating FROM standrating WHERE standid = "+stand.getStandid(), Integer.class);
 		List<Integer> resultat = query.getResultList();
@@ -71,6 +72,12 @@ public class StandEAO {
 		List<StandRating> resultat = (List<StandRating>) query.getResultList();
 >>>>>>> a6882da8983809f4df98e515fbcf32dab47fcf3a
 		
+=======
+
+		String sql = "SELECT * FROM EXPO2019.standrating WHERE standid = "+stand.getStandid();
+		Query query = em.createNativeQuery(sql, StandRating.class);
+		List<StandRating> resultat = (List<StandRating>) query.getResultList();
+>>>>>>> 14e67aa7d9f599b1a63ff599028f914f6598ac0c
 		for (StandRating sr : resultat) {
 			rating += sr.getRating();
 		}
