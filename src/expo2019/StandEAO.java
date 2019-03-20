@@ -59,6 +59,22 @@ public class StandEAO {
 		return stands;
 	}
 	
+	public void setTotalRating(Stand stand) {
+		double rating = 0;
+
+		String sql = "SELECT * FROM EXPO2019.standrating WHERE standid = "+stand.getStandid();
+		Query query = em.createNativeQuery(sql, StandRating.class);
+		List<StandRating> resultat = (List<StandRating>) query.getResultList();
+		for (StandRating sr : resultat) {
+			rating += sr.getRating();
+		}
+		
+		rating = rating/resultat.size();
+		
+		stand.setKalkulertscore(rating);
+		em.persist(stand);
+	}
+	
 	public User hentBrukerPaaPK(int tlfnr) {
 		return em.find(User.class, tlfnr);
 	}

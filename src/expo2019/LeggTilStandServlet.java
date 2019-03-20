@@ -47,7 +47,7 @@ public class LeggTilStandServlet extends HttpServlet {
 		}
 		Stand stand = new Stand(request);
 		if (!stand.hasValidInput()) {
-			response.sendRedirect("LeggTilStandServlet" + "?invalidInput");
+			response.sendRedirect("leggtil" + "?invalidInput");
 		} else {
 			Integer id = standEAO.hentNesteId();
 			System.out.println(id);

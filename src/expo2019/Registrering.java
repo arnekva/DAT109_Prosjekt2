@@ -25,7 +25,8 @@ public class Registrering {
 	public boolean erAlleFeltGyldig() {
 		return (erTlfGyldig(this.tlf)) && (erPassordGyldig(this.passord)) && (erRepeterGyldig(this.repeterPassord));
 	}
-//	
+	
+	
 //	public boolean erTlfLedig() {
 //		try {
 //			int nr = Integer.parseInt(this.tlf);

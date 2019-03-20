@@ -34,23 +34,28 @@ public class StandServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession sesjon = request.getSession(false);
-		boolean erLoggetInn = false;
+		sesjon.removeAttribute("feilmelding");
+		String feilmelding = null;
+		if (request.getParameter("invalidRating") != null) {
+			feilmelding = "Stemmen ble ikke registrert.";
+		} else if (request.getParameter("illegalVote") != null) {
+			feilmelding = "Administrator kan ikke stemme.";
+		}
+		if (feilmelding != null) {
+			sesjon.setAttribute("feilmelding", feilmelding);
+			//TODO: behandle feilmelding i JSP
+		}
 
-		// TODO: Behandling av feilmeldinger
 		String standid = request.getParameter("standid");
 		request.getSession().removeAttribute("standid");
 		if (!standEAO.kanKonverteres(standid)) {
 			response.sendRedirect("stand" + "?unknownStandId");
 		}
-		System.out.println("*****************"+standid);
 		int id = Integer.parseInt(standid);
 		Stand stand = standEAO.hentStandPaaPK(id);
 
-		if (sesjon.getAttribute("bruker") != null) {
-			erLoggetInn = true;
-		}
-		request.getSession().setAttribute("stand", stand);
-		request.getSession().setAttribute("standid", standid);
+		sesjon.setAttribute("stand", stand);
+		sesjon.setAttribute("standid", standid);
 		request.getRequestDispatcher("WEB-INF/stand.jsp").forward(request, response);
 
 	}
@@ -63,28 +68,32 @@ public class StandServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		HttpSession sesjon = request.getSession(false);
-		if (sesjon == null || sesjon.getAttribute("bruker") == null) {
+		if (sesjon == null) {
 			response.sendRedirect("logginn" + "?nosession");
+		} else {
+			String ratingParam = request.getParameter("stars");
+			double rating = 0;
+
+			int standid = 0;
+			try {
+				rating = Double.parseDouble(ratingParam);
+				standid = Integer.parseInt(request.getParameter("standid"));
+			} catch (Exception e) {
+				response.sendRedirect("stand" + "?standid=" + standid + "&invalidRating");
+			}
+			if (sesjon.getAttribute("admin") != null) {
+				response.sendRedirect("stand" + "?standid=" + standid + "&illegalVote");
+			} else if (sesjon.getAttribute("bruker") == null) {
+				response.sendRedirect("logginn" + "?nosession");
+			} else {
+				User user = (User) sesjon.getAttribute("bruker");
+				Stand stand = standEAO.hentStandPaaPK(standid);
+				StandRating standrating = new StandRating(user, stand, rating);
+
+				standEAO.leggTilStandRating(standrating);
+				response.sendRedirect("stand" + "?standid=" + standid);
+			}
 		}
-		String ratingParam = request.getParameter("stars");
-		double rating = 0;
-
-		int standid = 0;
-		try {
-			rating = Double.parseDouble(ratingParam);
-			standid = Integer.parseInt(request.getParameter("standid"));
-		} catch (Exception e) {
-			response.sendRedirect("stand" + "?invalidRating");
-		}
-
-		User user = (User) sesjon.getAttribute("bruker");
-		System.out.println("**************" + user.getTlfnr());
-		Stand stand = standEAO.hentStandPaaPK(standid);
-		StandRating standrating = new StandRating(user, stand, rating);
-
-		standEAO.leggTilStandRating(standrating);
-		response.sendRedirect("stand" + "?standid="+standid);
-
 	}
 
 }

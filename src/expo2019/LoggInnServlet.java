@@ -28,13 +28,21 @@ public class LoggInnServlet extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession sesjon = request.getSession(false);
 		if (sesjon == null) {
-			request.getRequestDispatcher("WEB-INF/logginn.jsp").forward(request, response);
+			sesjon = request.getSession(true);
+		}
+		if (sesjon.getAttribute("user") != null || sesjon.getAttribute("admin") != null) {
+			response.sendRedirect("stands" + "?alreadyLoggedIn");
 		} else {
-			if (sesjon.getAttribute("user") != null || sesjon.getAttribute("admin") != null) {
-				response.sendRedirect("stands" + "?alreadyLoggedIn");
-			} else {
-				request.getRequestDispatcher("WEB-INF/logginn.jsp").forward(request, response);
+			sesjon.removeAttribute("feilmelding");
+			String feilmelding = null;
+			if (request.getParameter("nosession") != null) {
+				feilmelding = "Vennligst logg inn for å avgi stemme.";
 			}
+			if (feilmelding != null) {
+				sesjon.setAttribute("feilmelding", feilmelding);
+				//TODO: behandle feilmelding i JSP
+			}
+			request.getRequestDispatcher("WEB-INF/logginn.jsp").forward(request, response);
 		}
 		
 	}

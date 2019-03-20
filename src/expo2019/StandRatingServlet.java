@@ -26,20 +26,23 @@ public class StandRatingServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
-		if(session == null || session.getAttribute("admin") == null) {
-			response.sendRedirect("logginn" + "?noAdmin");
-		}else {
+//		if(session.getAttribute("admin") == null) {
+//			response.sendRedirect("stands" + "?noAdmin");
+//		}else {
+			
 			List<Stand> stands = StandEAO.hentAlleStands();
+			for(Stand s: stands) {
+				StandEAO.setTotalRating(s);
+			}
 			Stand.sorter(stands);
-			double scoreTest = StandEAO.hentScorePaaPk(1, 90909090);
-			System.out.println(scoreTest);
+			
 			request.getSession().setAttribute("stands", stands);
 			
 			request.getRequestDispatcher("WEB-INF/score.jsp").forward(request, response);
 		}
 		
 		
-	}
+//	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		doGet(request, response);
