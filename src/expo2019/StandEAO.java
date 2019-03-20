@@ -61,10 +61,10 @@ public class StandEAO {
 	
 	public double totalRating(Stand stand) {
 		double rating = 0;
+
 		String sql = "SELECT * FROM EXPO2019.standrating WHERE standid = "+stand.getStandid();
 		Query query = em.createNativeQuery(sql, StandRating.class);
 		List<StandRating> resultat = (List<StandRating>) query.getResultList();
-		
 		for (StandRating sr : resultat) {
 			rating += sr.getRating();
 		}
