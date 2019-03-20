@@ -26,9 +26,9 @@ public class StandRatingServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
-		if(session.getAttribute("admin") == null) {
-			response.sendRedirect("stands" + "?noAdmin");
-		}else {
+//		if(session.getAttribute("admin") == null) {
+//			response.sendRedirect("stands" + "?noAdmin");
+//		}else {
 			List<Stand> stands = StandEAO.hentAlleStands();
 			Stand.sorter(stands);
 			double scoreTest = StandEAO.totalRating(stands.get(0));
@@ -39,7 +39,7 @@ public class StandRatingServlet extends HttpServlet {
 		}
 		
 		
-	}
+//	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		doGet(request, response);

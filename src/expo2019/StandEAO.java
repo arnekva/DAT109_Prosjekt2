@@ -61,17 +61,23 @@ public class StandEAO {
 	
 	public double totalRating(Stand stand) {
 		double rating = 0;
+<<<<<<< HEAD
 		
 		TypedQuery<Integer> query = em.createQuery("SELECT rating FROM standrating WHERE standid = "+stand.getStandid(), Integer.class);
 		List<Integer> resultat = query.getResultList();
+=======
+		String sql = "SELECT * FROM EXPO2019.standrating WHERE standid = "+stand.getStandid();
+		Query query = em.createNativeQuery(sql, StandRating.class);
+		List<StandRating> resultat = (List<StandRating>) query.getResultList();
+>>>>>>> a6882da8983809f4df98e515fbcf32dab47fcf3a
 		
-		while(resultat.iterator().hasNext()) {
-			rating += resultat.iterator().next();
+		for (StandRating sr : resultat) {
+			rating += sr.getRating();
 		}
 		
 		rating = rating/resultat.size();
 		
-		return rating;
+		return rating/1.0;
 	}
 	
 	public User hentBrukerPaaPK(int tlfnr) {
