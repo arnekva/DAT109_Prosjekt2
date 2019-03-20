@@ -60,9 +60,9 @@ public class StandEAO {
 	}
 	
 	public double totalRating(Stand stand) {
-		int rating = 0;
+		double rating = 0;
 		
-		TypedQuery<Integer> query = em.createQuery("SELECT Rating FROM Standrating WHERE standid = "+stand.getStandid(), Integer.class);
+		TypedQuery<Integer> query = em.createQuery("SELECT rating FROM standrating WHERE standid = "+stand.getStandid(), Integer.class);
 		List<Integer> resultat = query.getResultList();
 		
 		while(resultat.iterator().hasNext()) {
