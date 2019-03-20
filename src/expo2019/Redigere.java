@@ -13,13 +13,13 @@ public class Redigere extends Stand{
 	
 	private Stand stand;
 	
-	public Redigere(HttpServletRequest request, StandEAO StandEAO) {
+	public Redigere(HttpServletRequest request, StandEAO StandEAO, Stand stand) {
 		this.tittel = (String) request.getParameter("tittel");
 		this.gruppenavn = (String) request.getParameter("gruppenavn");
 		this.lokasjon = (String) request.getParameter("lokasjon");
 		this.beskrivelse = (String) request.getParameter("beskrivelse");
 		this.standEAO = StandEAO;
-		this.stand = StandEAO.hentStandPaaPK(0);
+		this.stand = stand;
 	}
 	
 	public void redigereStand(String tittel, String beskrivelse, String gruppenavn, String lokasjon) {

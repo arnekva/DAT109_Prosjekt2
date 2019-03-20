@@ -34,11 +34,11 @@
   <h1 class="header_name">Endre en stand:</h1>
 <h2></h2>
   <div class="container1">
-    <div><h3>Hvilken stand vil du endre pÃ¥? (dropdown meny kommer)</h3></div>
-    <select class="stand_dropdown" onchange="this.form.submit()">
+    <div><h3>Hvilken stand vil du endre på? (dropdown meny kommer)</h3></div>
+    <select class="stand_dropdown" name="standid" onchange="this.form.submit()">
      <c:forEach var="stand" items="${standliste}" varStatus="loop">
      
-     <option value="${stand.tittel}">${stand.tittel}</option>
+     <option value="${stand.standid}">${stand.tittel}</option>
     
      
      </c:forEach>
@@ -61,7 +61,7 @@
 
         <textarea placeholder="Beskrivelse av stand" type="text" name="beskrivelse" tabindex="5" value="${stand.beskrivelse}" required></textarea>
 
-	<input type="hidden" value="${stand.standid}">
+	<input type="hidden" name="standid" value="${stand.standid}">
         <button name="submit" type="submit" id="leggtil-submit" data-submit="...Sending">Submit</button>
       </fieldset>
         </form>
