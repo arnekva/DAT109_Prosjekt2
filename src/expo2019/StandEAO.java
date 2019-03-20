@@ -59,6 +59,21 @@ public class StandEAO {
 		return stands;
 	}
 	
+	public double totalRating(Stand stand) {
+		int rating = 0;
+		
+		TypedQuery<Integer> query = em.createQuery("SELECT Rating FROM Standrating WHERE standid = "+stand.getStandid(), Integer.class);
+		List<Integer> resultat = query.getResultList();
+		
+		while(resultat.iterator().hasNext()) {
+			rating += resultat.iterator().next();
+		}
+		
+		rating = rating/resultat.size();
+		
+		return rating;
+	}
+	
 	public User hentBrukerPaaPK(int tlfnr) {
 		return em.find(User.class, tlfnr);
 	}
