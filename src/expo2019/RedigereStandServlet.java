@@ -1,6 +1,8 @@
 package expo2019;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -32,6 +34,14 @@ public class RedigereStandServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		List<Stand> standliste = StandEAO.hentAlleStands();
+		String standid = request.getParameter("standid");
+		if(standid != null) {
+		int standid1 = Integer.parseInt(standid);
+		Stand stand = StandEAO.hentStandPaaPK(standid1);
+		request.getSession().setAttribute("stand", stand);
+		request.getSession().setAttribute("standliste", standliste);
+		}
 		request.getRequestDispatcher("WEB-INF/endrestand.jsp").forward(request, response);
 	}
 
