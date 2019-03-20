@@ -37,7 +37,7 @@
     <div class="section_info" style="float:right;"><img class="standListImage" src="images/standImages/standimg4.png" alt="bilde for stand"/></div>
 <div class="listitem"><img class="backimg" src="images/backbutton.png"/><a href="leggtil">Legg til ny stand</a></div>
 <div class="listitem"><img class="backimg" src="images/backbutton.png"/><a href="score">Se rangeringstavle</a></div>
-<div class="listitem"><img class="backimg" src="images/backbutton.png"/><a href="endrestand.html">Endre en stand</a></div>
+<div class="listitem"><img class="backimg" src="images/backbutton.png"/><a href="RedigereStand">Endre en stand</a></div>
       </div>
 
   </div>

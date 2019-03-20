@@ -80,6 +80,20 @@ public class StandEAO {
 		stand.setKalkulertscore(rating);
 	}
 	
+	public void redigereStand(Stand stand) {
+		String sql = "SELECT * FROM EXPO2019.stand WHERE standid = "+stand.getStandid();
+		Query query = em.createNativeQuery(sql, StandRating.class);
+		Stand resultat = (Stand) query.getSingleResult();
+		
+		resultat.setBeskrivelse(stand.getBeskrivelse());
+		resultat.setTittel(stand.getTittel());
+		resultat.setGruppenavn(stand.getGruppenavn());
+		resultat.setLokasjon(stand.getLokasjon());	
+		//resultat.setBilde(stand.getBilde());
+		
+		em.merge(resultat);
+	}
+	
 	public User hentBrukerPaaPK(int tlfnr) {
 		return em.find(User.class, tlfnr);
 	}
