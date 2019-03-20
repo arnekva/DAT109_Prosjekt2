@@ -1,5 +1,7 @@
 package expo2019;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.rmi.server.Operation;
 import java.util.List;
 
@@ -72,7 +74,7 @@ public class StandEAO {
 		}
 		
 		rating = (rating/resultat.size())/1.0;
-		rating = Math.round(rating);
+		rating = round(rating, 3);
 		em.merge(stand);
 		stand.setKalkulertscore(rating);
 		int id = stand.getStandid();
@@ -98,6 +100,13 @@ public class StandEAO {
 	}
 	public synchronized void leggTilBruker(User user) {
 		em.persist(user);
+	}
+	public static double round(double value, int places) {
+	    if (places < 0) throw new IllegalArgumentException();
+
+	    BigDecimal bd = new BigDecimal(value);
+	    bd = bd.setScale(places, RoundingMode.HALF_UP);
+	    return bd.doubleValue();
 	}
 	
 }
