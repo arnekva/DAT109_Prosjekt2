@@ -1,4 +1,5 @@
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page language="java" contentType="text/html; charset=UTF-8" %>
 
 
 <!DOCTYPE html>
@@ -8,7 +9,7 @@
 
 <link rel="icon" href="images/favicon.png">
  <meta charset="UTF-8">
-<meta name=”robots” content=”index”>
+
 <style>
 
 </style>
@@ -31,9 +32,16 @@
 <div class="container">
 <div class="backbutton"><img class="backimg" src="images/backbutton.png"/><a href="jury.html">Ta meg tilbake til juryfunksjonene</a></div>
   <h1 class="header_name">Endre en stand:</h1>
-
+<h2></h2>
   <div class="container1">
-    <div><h3>Hvilken stand vil du endre på? (dropdown meny kommer)</h3></div>
+    <div><h3>Hvilken stand vil du endre pÃ¥? (dropdown meny kommer)</h3></div>
+    
+     <c:forEach var="stand" items="${standliste}" varStatus="loop">
+     <select class="stand_dropdown" onchange="this.form.submit()">
+     <option value="${stand.tittel}">${stand.tittel}</option>
+     </select>
+     
+     </c:forEach>
     <form id="leggtil" action="" method="post">
 
       <fieldset>
@@ -58,8 +66,8 @@
         </form>
   </div>
 
-
+</div>
   </div>
-  <div class="footer">© HvL Expo 2019</div>
+  <div class="footer">Â© HvL Expo 2019</div>
 </body>
 </html>
