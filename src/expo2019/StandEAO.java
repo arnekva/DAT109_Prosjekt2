@@ -59,7 +59,7 @@ public class StandEAO {
 		return stands;
 	}
 	
-	public double totalRating(Stand stand) {
+	public void setTotalRating(Stand stand) {
 		double rating = 0;
 
 		String sql = "SELECT * FROM EXPO2019.standrating WHERE standid = "+stand.getStandid();
@@ -71,7 +71,8 @@ public class StandEAO {
 		
 		rating = rating/resultat.size();
 		
-		return rating/1.0;
+		stand.setKalkulertscore(rating);
+		em.persist(stand);
 	}
 	
 	public User hentBrukerPaaPK(int tlfnr) {

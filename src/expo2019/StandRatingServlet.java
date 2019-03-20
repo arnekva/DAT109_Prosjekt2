@@ -29,10 +29,13 @@ public class StandRatingServlet extends HttpServlet {
 //		if(session.getAttribute("admin") == null) {
 //			response.sendRedirect("stands" + "?noAdmin");
 //		}else {
+			
 			List<Stand> stands = StandEAO.hentAlleStands();
+			for(Stand s: stands) {
+				StandEAO.setTotalRating(s);
+			}
 			Stand.sorter(stands);
-			double scoreTest = StandEAO.totalRating(stands.get(0));
-			System.out.println(scoreTest);
+			
 			request.getSession().setAttribute("stands", stands);
 			
 			request.getRequestDispatcher("WEB-INF/score.jsp").forward(request, response);
