@@ -164,8 +164,8 @@ color: #00a9d8;
     font-family: Raleway, sans-serif;
     line-height: 1;
     margin-bottom:0px;
-    position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
+    position: fixed; /* fastsatt*/
+  top: 0; /* topp */
   overflow:hidden;
   z-index: 4000;
   }
