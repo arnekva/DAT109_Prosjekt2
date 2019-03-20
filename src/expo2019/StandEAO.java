@@ -72,7 +72,7 @@ public class StandEAO {
 		}
 		
 		rating = (rating/resultat.size())/1.0;
-		
+		rating = Math.round(rating);
 		em.merge(stand);
 		stand.setKalkulertscore(rating);
 		int id = stand.getStandid();
