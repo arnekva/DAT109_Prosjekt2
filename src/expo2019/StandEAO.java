@@ -1,5 +1,6 @@
 package expo2019;
 
+import java.rmi.server.Operation;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -71,8 +72,11 @@ public class StandEAO {
 		
 		rating = rating/resultat.size();
 		
+		em.merge(stand);
 		stand.setKalkulertscore(rating);
-		em.persist(stand);
+		int id = stand.getStandid();
+		stand = em.find(Stand.class, id);
+		stand.setKalkulertscore(rating);
 	}
 	
 	public User hentBrukerPaaPK(int tlfnr) {
