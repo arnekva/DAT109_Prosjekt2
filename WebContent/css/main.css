@@ -95,7 +95,9 @@ z-index: 4000;
 #cssmenu > ul > li > a:hover:after {
   background: #64d0df;
 }
-
+#burger, #quit{
+  display:none;
+}
 .main{
   height:100%;
   margin-bottom:5px;
@@ -132,7 +134,7 @@ font-size:25px;
 }
 .section_info{
       font-family: "LyonText",serif;
-font-size: 1.125rem;
+font-size: 1.5rem;
     letter-spacing: .0125rem;
 }
 .backbutton a{
@@ -154,6 +156,96 @@ color: #00a9d8;
   margin-top:80px;
   margin-left:60px;
 }
+@media (min-width: 100px) and (max-width: 1000px) {
+
+  #cssmenu {
+    width: 100%;
+    border-bottom: 3px solid #64d0df;
+    font-family: Raleway, sans-serif;
+    line-height: 1;
+    margin-bottom:0px;
+    position: fixed; /* fastsatt*/
+  top: 0; /* topp */
+  overflow:hidden;
+  z-index: 4000;
+  }
+        #cssmenu > ul > li > a {
+          z-index: 2;
+          padding: 20px 25px 12px 25px;
+          font-size: 5px;
+          font-weight: 200;
+          text-decoration: none;
+          color: #64d0df;
+          font-family:"AkademieStd",sans-serif;letter-spacing:.015rem;margin-left:auto;margin-right:auto;font-size:1.0rem;color:#fff;
+          -webkit-transition: all .2s ease;
+          -moz-transition: all .2s ease;
+          -ms-transition: all .2s ease;
+          -o-transition: all .2s ease;
+
+          margin-right: -4px;
+        }
+ }
+ @media (min-width: 100px) and (max-width: 650px) {
+         .logo {
+           display:none;
+         }
+         #cssmenu > ul > li > a {
+           z-index: 2;
+           padding: 20px 8px 10px 8px;
+           font-size: 15px;
+           font-weight: 400;
+           text-decoration: none;
+           color: #64d0df;
+           font-family:"AkademieStd",sans-serif;letter-spacing:.025rem;margin-left:auto;margin-right:auto;font-size:0.9rem;color:#fff;
+           -webkit-transition: all .2s ease;
+           -moz-transition: all .2s ease;
+           -ms-transition: all .2s ease;
+           -o-transition: all .2s ease;
+
+           margin-right: -4px;
+         }
+
+  }
+@media (min-width: 650px) and (max-width: 1000px) {
+        .logo {
+          height:45px;
+          bottom:0;
+          padding-top:10px;
+          margin-left:10px;
+        }
+        #cssmenu > ul > li > a {
+          z-index: 2;
+          padding: 20px 8px 10px 8px;
+          font-size: 15px;
+          font-weight: 400;
+          text-decoration: none;
+          color: #64d0df;
+          font-family:"AkademieStd",sans-serif;letter-spacing:.025rem;margin-left:auto;margin-right:auto;font-size:1.25rem;color:#fff;
+          -webkit-transition: all .2s ease;
+          -moz-transition: all .2s ease;
+          -ms-transition: all .2s ease;
+          -o-transition: all .2s ease;
+
+          margin-right: -4px;
+        }
+
+ }
+
+@media (min-width: 1000px) and (max-width: 2000px) {
+  .logo{
+    height:90px;
+    width:auto;
+    bottom:0;
+    margin-left:10px;
+    position:absolute;
+    display:block;
+  }
+
+ }
+.hvl_logo{
+  height:100px;
+  width:auto;
+}
 .listitem a {
   border-bottom: 1px solid #64d0df;
   color: #008aaf;
@@ -173,7 +265,7 @@ color: #00a9d8;
   height:18px;
   width:10px;
   float:left;
-  margin-top:3px;
+  margin-top:10px;
   margin-right:5px;
 }
 .menuicn{
@@ -197,11 +289,13 @@ body {
   padding-bottom: 6rem;
   min-height: 100%;
   font-family:"AkademieStd",sans-serif;
-  letter-spacing:.025rem;
+  letter-spacing:.050rem;
   margin-left:auto;
   margin-right:auto;
   font-size:1.25rem;
-  color:#fff
+  line-height: 2.5rem;
+  color:#fff;
+
 
 
 }
@@ -211,13 +305,15 @@ body {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   color: #222;
-  font-size: 14px;
-  line-height: 26px;
+
   padding-bottom: 50px;
 
 
 }
-
+.sub-title{
+  margin-top:40px;
+  margin-bottom:40px;
+}
 .container {
   max-width: 1000px;
   min-width:500px;
@@ -228,11 +324,30 @@ body {
   padding: 40px;
   margin-top:200px;
   overflow:hidden;
+margin-top:200px;
 
 }
+.container_index{
+  max-width: 1000px;
+  min-width:500px;
+  background: #fff;
+  margin: 0px auto 0px;
+  border-radius: 3px;
+  padding: 40px;
+  overflow:hidden;
+margin-top:-450px;
 
+position:relative;
+
+  }
+  .home_container{
+    width:100%;
+overflow:hidden;
+  }
 .home_photo{
  width:100%;
+ z-index:0;
+ position:relative;
 }
 .header {
   margin-bottom: 30px;
@@ -341,6 +456,8 @@ body {
 .header_name{
   font-size:40px;
   text-align:center;
+  margin-bottom:30px;
+  margin-top:80px;
 
 }
 .header_desc{
@@ -358,7 +475,7 @@ body {
   margin-top:5px;
 }
 .footer {
-  height:25px;
+  height:70px;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -405,21 +522,28 @@ font-family: 'Lato', sans-serif;
 
 .stand_list {
    display: block;
-
+   width:100%;
+   height:100%;
  }
 
  .stand_list ul {
    list-style: none;
-   width: 90%;
-       margin: auto;
+   width: 100%;
+   margin-left:auto;
+   margin-right:auto;
+
  }
 
  .stand_list ul li {
+   width:30%;
      display: inline;
      list-style: none;
      float: left;
-     padding: 0 10px 0 0;
+     : 0 10px 155px 0;
      text-align:center;
+     margin-left:auto;
+     margin-right:auto;
+
  }
 
  .stand_list ul li span a {
@@ -457,7 +581,8 @@ overflow: hidden;
 text-overflow: ellipsis;
 
 }
-.standListImage{
+.standListImage,
+.standListImageJury{
   width:200px;
   height:200px;
   background-position: center center;
@@ -470,27 +595,37 @@ text-overflow: ellipsis;
   font-size:25px;
 
 }
-.logo{
-  height:90px;
-  width:auto;
-  bottom:0;
-  margin-left:10px;
-  position:absolute;
-}
+
 .feilerror{
   color:red;
   text-align:center;
 }
+.topnav{
+  display:none;
+}
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
 @media only screen
-and (max-device-width: 600px){
+and (max-device-width: 1000px){
   * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-  }
 
+  }
+  html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+  }
   html {
     height: 100%;
+    width:100%;
+    margin: 0px;
+padding: 0px;
   }
 
   body {
@@ -501,23 +636,33 @@ and (max-device-width: 600px){
     color: #222;
     font-size: 25px;
     line-height: 60px;
-    padding-bottom: 50px;
+
+    width:100%;
   }
 
   .container {
-  width: 100%;
+
+  width:90%;
     background: #fff;
     margin: 0px auto 0px;
     box-shadow: 1px 1px 2px #DAD7D7;
     border-radius: 3px;
-    padding: 40px;
-    margin-top: 250px;
+
     overflow:hidden;
     height:100%;
-    margin-bottom:500px;
+    margin-bottom:200px;
+    font-size: 2.0rem;
+    line-height: 5rem;
+    padding:30px;
+    margin-top:30%;
+
+  }
+  .container p{
+      font-size: 1.75rem;
   }
   .home_container{
     width:100%;
+
   }
   .home_photo{
     display:none;
@@ -525,20 +670,27 @@ and (max-device-width: 600px){
   .main{
     height:100%;
     margin-bottom:5px;
-    margin-top:370px;
+    width:100%;
+    left:0;
+    right:0;
+    top:0;
+        margin-top:100px;
   }
-  .container_index{
-    max-width: 900px;
+.container_index{
+  width:90%;
     background: #fff;
     margin: 0px auto 0px;
     box-shadow: 1px 1px 2px #DAD7D7;
     border-radius: 3px;
-    padding: 40px;
-    margin-top: 0px;
+
     overflow:hidden;
     height:100%;
-    margin-bottom:500px;
-    font-size:40px;
+    margin-bottom:200px;
+    font-size: 1.0rem;
+    line-height: 3rem;
+    padding:30px;
+
+
   }
   .logo{
   display:none;
@@ -546,101 +698,10 @@ and (max-device-width: 600px){
 .image_center_home{
 
 }
-#cssmenu,
-#cssmenu ul,
-#cssmenu ul li,
-#cssmenu ul li a {
-  margin: 0;
-
-  padding: 0;
-  border: 0;
-  list-style: none;
-  line-height: 2;
-  display: block;
-  position: relative;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-#cssmenu:after,
-#cssmenu > ul:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
-}
-#cssmenu {
-  width: 100%;
-  border-bottom: 3px solid #64d0df;
-  font-family: Raleway, sans-serif;
-  line-height: 1;
-  margin-bottom:0px;
-  position: fixed; /* Set the navbar to fixed position */
-top: 0; /* Position the navbar at the top of the page */
-overflow:hidden;
-z-index: 4000;
-}
-#cssmenu ul {
-  background: #004357;
-}
-#cssmenu > ul > li {
-  float: right;
-}
-#cssmenu.align-center > ul {
-  font-size: 0;
-  text-align: center;
-}
-#cssmenu.align-center > ul > li {
-  display: inline-block;
-  float: none;
-}
-#cssmenu.align-right > ul > li {
-  float: right;
-}
-#cssmenu.align-right > ul > li > a {
-  margin-right: 0;
-  margin-left: -4px;
-}
-#cssmenu > ul > li > a {
-  z-index: 2;
-  padding: 60px 25px 12px 25px;
-  font-size: 250px;
-  font-weight: 300;
-  text-decoration: none;
-  color: #64d0df;
-  font-family:"AkademieStd",sans-serif;letter-spacing:.075rem;margin-left:auto;margin-right:auto;font-size:2rem;color:#fff;
-  -webkit-transition: all .2s ease;
-  -moz-transition: all .2s ease;
-  -ms-transition: all .2s ease;
-  -o-transition: all .2s ease;
-
-  margin-right: -4px;
-}
-#cssmenu > ul > li.active > a,
-#cssmenu > ul > li:hover > a,
-#cssmenu > ul > li > a:hover {
-  color: #ffffff;
-}
-#cssmenu > ul > li > a:after {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-  width: 100%;
-  height: 120%;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  content: "";
+#cssmenu{
 
 }
-#cssmenu > ul > li.active > a:after,
-#cssmenu > ul > li:hover > a:after,
-#cssmenu > ul > li > a:hover:after {
-  background: #64d0df;
-}
+
 .backbutton{
   height:40px;
 }
@@ -668,7 +729,7 @@ color: #00a9d8;
   height:18px;
   width:10px;
   float:left;
-  margin-top:18px;
+  margin-top:30px;
   margin-right:5px;
 }
 .listitem a {
@@ -687,16 +748,160 @@ color: #00a9d8;
 color: #00a9d8;
 }
 .footer {
-  display:none;
-  height:25px;
+  height:150px;
   position: absolute;
   right: 0;
-  bottom: 0;
   left: 0;
    width:100%;
-  padding: 1rem;
   background-color: #424244;
   text-align: center;
-    margin-top:150px;
     color:white;
+    margin-bottom:0px;
+    margin-right: 0px;
+    font-size: 2rem;
+
+}
+.stand_list:first-of-type {
+  margin-top:150px;
+   display: block;
+   margin-left:auto;
+   margin-right:auto;
+
+ }
+
+ .stand_list ul {
+   list-style: none;
+   width: 100%;
+   margin-left:auto;
+   margin-right:auto;
+
+ }
+
+ .stand_list ul li {
+   width:100%;
+     display: inline;
+     list-style: none;
+     float: left;
+     : 0 10px 155px 0;
+     text-align:center;
+     margin-left:auto;
+     margin-right:auto;
+
+ }
+
+ .stand_list ul li span a {
+     background-color: #fff;
+ }
+
+ .stand_list ul li a {
+
+   display: block;
+   /*
+   margin-right: 10px;
+   margin-bottom: 7px; */
+   opacity: 0.75;
+   -webkit-transition: all 0.3s linear;
+   -moz-transition: all 0.3s linear;
+
+ }
+ .stand_list ul li a:hover {
+   opacity: 1.0;
+ }
+
+ .stand_list ul li a img {
+   border: 6px solid #424244;
+ }
+ .infoText{
+   width:100%;
+   height:100%;
+   font-size: 3rem;
+   margin-bottom:10px;
+   display: -webkit-box;
+ -webkit-line-clamp: 3;
+ -webkit-box-orient: vertical;
+ overflow: hidden;
+ text-overflow: ellipsis;
+
+ }
+
+
+ #burger{
+   position: fixed;
+   right: 0;
+   top: 0;
+   color: white;
+   background: linear-gradient(45deg, #9682C8 10%, #05BCC9);;
+   font-size: 64px;
+   padding: 16px 16px 32px 32px;
+   border-radius: 0% 0% 0% 100%;
+   transition: 1s;
+   cursor: pointer;
+   position:fixed;
+   z-index: 9;
+ }
+
+ #quit{
+   position: fixed;
+   top: 0;
+   color: white;
+   font-size: 64px;
+   padding: 0px;
+   display: none;
+   cursor: pointer;
+   margin-right:50px;
+   z-index: 10;
+   margin-top:15px;
+ }
+ #links {
+   position:fixed;
+   display: none;
+   flex-direction: column;
+   width: 100vw;
+   height: 50vh;
+
+   padding: 3vh 0;
+   font-size:3rem;
+   justify-content: space-around;
+   z-index: 14;
+   margin-top:40px;
+ }
+
+ #links a,
+ #cssmenu li{
+   text-align: center;
+   text-decoration: none;
+   color: white;
+   font-size: 1.0em;
+  font-family:"AkademieStd",sans-serif;
+   z-index: 10;
+      line-height: 7rem;
+
+ }
+ #cssmenu{
+   z-index: 10;
+      margin-top:160px;
+ }
+ #cssmenu ul{
+   display:flex;
+   flex-direction: column-reverse;
+   z-index: 10;
+
+ }
+ .sub-title{
+   margin-top:40px;
+   margin-bottom:40px;
+ }
+ .hvl_logo{
+   height:200px;
+   width:auto;
+ }
+ .header_name{
+   font-size:2rem;
+   text-align:center;
+   margin-bottom:30px;
+   margin-top:80px;
+
+ }
+.standListImageJury{
+  display:none;
 }
