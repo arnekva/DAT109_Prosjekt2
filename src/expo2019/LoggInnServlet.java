@@ -27,10 +27,12 @@ public class LoggInnServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession sesjon = request.getSession(false);
+		if (sesjon == null) {
+			sesjon = request.getSession(true);
+		}
 		if (sesjon.getAttribute("user") != null || sesjon.getAttribute("admin") != null) {
 			response.sendRedirect("stands" + "?alreadyLoggedIn");
 		} else {
-			sesjon = request.getSession(true);
 			sesjon.removeAttribute("feilmelding");
 			String feilmelding = null;
 			if (request.getParameter("nosession") != null) {
