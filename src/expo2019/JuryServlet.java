@@ -20,7 +20,8 @@ public class JuryServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 		if (session == null || session.getAttribute("admin") == null) {
-			response.sendRedirect("stands" + "?noAdmin");	
+			response.sendRedirect("stands" + "?noAdmin");
+			//Denne må med 
 		} else {
 			request.getRequestDispatcher("WEB-INF/jury.jsp").forward(request, response);
 		}
