@@ -35,13 +35,14 @@
 <h2></h2>
   <div class="container1">
     <div><h3>Hvilken stand vil du endre pÃ¥? (dropdown meny kommer)</h3></div>
-    
+    <select class="stand_dropdown" onchange="this.form.submit()">
      <c:forEach var="stand" items="${standliste}" varStatus="loop">
-     <select class="stand_dropdown" onchange="this.form.submit()">
+     
      <option value="${stand.tittel}">${stand.tittel}</option>
-     </select>
+    
      
      </c:forEach>
+      </select>
     <form id="leggtil" action="" method="post">
 
       <fieldset>
