@@ -18,16 +18,25 @@
 <body>
 
   <div class="main">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script defer type="text/javascript" src="js/mobilemenu.js"></script>
+    <i id="burger" class="material-icons" onclick="burger()">menu</i>
+    <i id="quit" class="material-icons" onclick="quit()">clear</i>
+    <div id="links">
     <div id="cssmenu">
+
       <ul>
+
         <a href="hjem.html"><img class="logo"src="images/expo_logo.png"/></a>
           <li ><a href="annet.html">Annet</a></li>
         <li ><a href="kontakt.html">Kontakt</a></li>
         <li ><a href="jury" >For Juryen</a></li>
         <li ><a href="stands">Stands</a></li>
-        <li class="active"><a href="logginn">Logg inn</a></li>
+         <li class="active"><a href="logginn">Logg inn</a></li>
         <li ><a href="hjem.html">Hjem</a></li>
+
   </ul>
+  </div>
     </div>
 <div class="container">
   <h1 class="header_name">Logg inn</h1>

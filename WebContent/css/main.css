@@ -28,7 +28,7 @@ and (min-device-width: 600px){
 }
 #cssmenu {
   width: 100%;
-  border-bottom: 3px solid #008aaf;;
+  border-bottom: 10px solid #008aaf;
   font-family: Raleway, sans-serif;
   line-height: 1;
   margin-bottom:0px;
@@ -136,9 +136,16 @@ font-size:25px;
   font-size:17px;
 }
 .section_info{
-      font-family: "LyonText",serif;
 font-size: 1.5rem;
     letter-spacing: .0125rem;
+    margin-top:50px;
+}
+.section_info p{
+  margin-top: 25px;
+}
+.rating{
+  margin-top:20px;
+  margin-bottom: 50px;
 }
 .backbutton a{
 
@@ -163,7 +170,7 @@ color: #00a9d8;
 
   #cssmenu {
     width: 100%;
-    border-bottom: 3px solid #64d0df;
+      border-bottom: 5px solid #008aaf;
     font-family: Raleway, sans-serif;
     line-height: 1;
     margin-bottom:0px;
@@ -175,7 +182,7 @@ color: #00a9d8;
         #cssmenu > ul > li > a {
           z-index: 2;
           padding: 20px 25px 12px 25px;
-          font-size: 5px;
+          font-size: 7px;
           font-weight: 200;
           text-decoration: none;
           color: #64d0df;
@@ -191,6 +198,17 @@ color: #00a9d8;
  @media (min-width: 100px) and (max-width: 650px) {
          .logo {
            display:none;
+         }
+         #cssmenu {
+           width: 100%;
+             border-bottom: 4px solid #008aaf;
+           font-family: Raleway, sans-serif;
+           line-height: 1;
+           margin-bottom:0px;
+           position: fixed; /* fastsatt*/
+         top: 0; /* topp */
+         overflow:hidden;
+         z-index: 4000;
          }
          #cssmenu > ul > li > a {
            z-index: 2;
@@ -470,6 +488,7 @@ overflow:hidden;
   margin-top:-15px;
   color:#6A6A6A;
 }
+
 .location{
   text-align:center;
   margin-bottom: 70px;
@@ -526,26 +545,32 @@ font-family: 'Lato', sans-serif;
 .stand_list {
    display: block;
    width:100%;
-   height:100%;
+   height:100px;
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
+   padding-left: 0;
  }
 
  .stand_list ul {
    list-style: none;
-   width: 100%;
+  min-width: 720px;
+  width:100%;
    margin-left:auto;
    margin-right:auto;
-
+   padding-left: 0;
+   margin-left:35px;
  }
 
  .stand_list ul li {
    width:30%;
-     display: inline;
+     display: block;
      list-style: none;
      float: left;
-     : 0 10px 155px 0;
      text-align:center;
      margin-left:auto;
      margin-right:auto;
+     padding-left: 0;
 
  }
 
@@ -569,19 +594,21 @@ font-family: 'Lato', sans-serif;
  }
 
  .stand_list ul li a img {
-   border: 6px solid #424244;
+   border: 6px solid #64d0df;
  }
 .container {
   position: relative;
 }
 .infoText{
-  width:200px;
-  height:50px;
+
+  height:100px;
+  font-size: 1rem;
   display: -webkit-box;
 -webkit-line-clamp: 3;
 -webkit-box-orient: vertical;
 overflow: hidden;
 text-overflow: ellipsis;
+color:#004357;
 
 }
 .standListImage,
@@ -633,7 +660,7 @@ padding: 0px;
 
   body {
     min-height: 100%;
-    background: #eee;
+    background: #fff;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     color: #222;
@@ -646,10 +673,8 @@ padding: 0px;
   .container {
 
   width:90%;
-    background: #fff;
+
     margin: 0px auto 0px;
-    box-shadow: 1px 1px 2px #DAD7D7;
-    border-radius: 3px;
 
     overflow:hidden;
     height:100%;
@@ -657,11 +682,10 @@ padding: 0px;
     font-size: 2.0rem;
     line-height: 5rem;
     padding:30px;
-    margin-top:30%;
 
   }
   .container p{
-      font-size: 1.75rem;
+      font-size: 1.0rem;
   }
   .home_container{
     width:100%;
@@ -677,20 +701,19 @@ padding: 0px;
     left:0;
     right:0;
     top:0;
-        margin-top:100px;
+        margin-top:50px;
   }
 .container_index{
   width:90%;
     background: #fff;
     margin: 0px auto 0px;
-    box-shadow: 1px 1px 2px #DAD7D7;
-    border-radius: 3px;
 
     overflow:hidden;
     height:100%;
     margin-bottom:200px;
     font-size: 1.0rem;
-    line-height: 3rem;
+    line-height: 2rem;
+    letter-spacing: 0.04rem;
     padding:30px;
 
 
@@ -717,7 +740,7 @@ padding: 0px;
     border-bottom: none;
         display: block;
         font-family: "AkademieStd",sans-serif;
-            font-size: 1.125rem;
+            font-size: 1.5rem;
             float:left;
             margin-bottom:20px;
 }
@@ -764,6 +787,9 @@ color: #00a9d8;
     font-size: 2rem;
 
 }
+.stand_list{
+  margin-left: 0px;
+}
 .stand_list:first-of-type {
   margin-top:150px;
    display: block;
@@ -774,9 +800,11 @@ color: #00a9d8;
 
  .stand_list ul {
    list-style: none;
-   width: 100%;
+  min-width: 50px;
+  width:100%;
    margin-left:auto;
    margin-right:auto;
+   padding-left: 0;
 
  }
 
@@ -785,11 +813,11 @@ color: #00a9d8;
      display: inline;
      list-style: none;
      float: left;
-     : 0 10px 155px 0;
+
      text-align:center;
      margin-left:auto;
      margin-right:auto;
-
+     padding-left: 0px;
  }
 
  .stand_list ul li span a {
@@ -817,7 +845,7 @@ color: #00a9d8;
  .infoText{
    width:100%;
    height:100%;
-   font-size: 3rem;
+   font-size: 2rem;
    margin-bottom:10px;
    display: -webkit-box;
  -webkit-line-clamp: 3;
@@ -899,12 +927,60 @@ color: #00a9d8;
    width:auto;
  }
  .header_name{
-   font-size:2rem;
+   font-size:3rem;
    text-align:center;
    margin-bottom:30px;
    margin-top:80px;
-
+color: #eb6851;
  }
 .standListImageJury{
   display:none;
+}
+.header_name{
+
+}
+.header_desc{
+  font-size:1.5rem;
+  text-align: center;
+  color:grey;
+  margin-top:-40px;
+}
+.info{
+  text-align: center;
+}
+.section_info{
+
+  text-align: center;
+  font-size: 2rem;
+}
+.section_info:first-of-type{
+  float:left !important;
+  width:100%;
+  height:auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.section_info p{
+  font-size: 1.5rem;
+}
+.standListImage{
+
+  margin:0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header_header{
+  font-size:2.5rem;
+  text-align: center;
+}
+.rating{
+  margin-top:30px;
+  margin-bottom:50px;
+}
+.ingenbruker{
+  text-align: center;
+  font-size:1.025rem !important;
+  letter-spacing: 0.5px !important;
+  line-height: 1.5rem;
 }
