@@ -19,11 +19,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
-<body style="background: url('images/expo_bg3.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;">
+<body>
 
   <div class="main">
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
