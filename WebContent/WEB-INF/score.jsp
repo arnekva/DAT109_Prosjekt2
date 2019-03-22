@@ -41,7 +41,7 @@
     </div>
 
 <div class="container">
-<div class="backbutton"><img class="backimg" src="images/backbutton.png"/><a href="jury.html">Ta meg tilbake til juryfunksjonene</a></div>
+<div class="backbutton"><img class="backimg" src="images/backbutton.png"/><a href="jury">Ta meg tilbake til juryfunksjonene</a></div>
   <h1 class="header_name">Rangert poengtavle for stands</h1>
   <div class="table-title">
 <h3></h3>

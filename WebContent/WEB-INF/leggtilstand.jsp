@@ -41,7 +41,7 @@
   </div>
     </div>
 <div class="container">
-<div class="backbutton"><img class="backimg" src="images/backbutton.png"/><a href="jury.html">Ta meg tilbake til juryfunksjonene</a></div>
+<div class="backbutton"><img class="backimg" src="images/backbutton.png"/><a href="jury">Ta meg tilbake til juryfunksjonene</a></div>
   <h1 class="header_name">Legg til en ny stand</h1>
 
   <div class="container1">
