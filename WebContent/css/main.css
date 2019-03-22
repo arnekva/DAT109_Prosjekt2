@@ -481,6 +481,13 @@ overflow:hidden;
   margin-top:80px;
 
 }
+.header_home{
+  font-size:40px;
+  text-align:center;
+  margin-bottom:30px;
+  margin-top:80px;
+  color:#eb6851;
+}
 .header_desc{
   font-size:15px;
   text-align:center;
@@ -714,7 +721,7 @@ padding: 0px;
     font-size: 1.0rem;
     line-height: 2rem;
     letter-spacing: 0.04rem;
-    padding:30px;
+
 
 
   }
@@ -927,11 +934,13 @@ color: #00a9d8;
    width:auto;
  }
  .header_name{
-   font-size:3rem;
+   font-size:2.25rem;
    text-align:center;
+   overflow:hidden;
    margin-bottom:30px;
    margin-top:80px;
-color: #eb6851;
+   color:#eb6851;
+   line-height: 3.5rem;
  }
 .standListImageJury{
   display:none;
@@ -983,4 +992,14 @@ color: #eb6851;
   font-size:1.025rem !important;
   letter-spacing: 0.5px !important;
   line-height: 1.5rem;
+}
+.header_home{
+  font-size:2.25rem;
+  text-align:center;
+  overflow:hidden;
+  margin-bottom:30px;
+  margin-top:80px;
+  color:#eb6851;
+  line-height: 3.5rem;
+
 }
