@@ -55,11 +55,11 @@
         <input placeholder="Gruppemedlemmer" type="text" name="gruppenavn" tabindex="2" required>
 
 
-        <input placeholder="Expnummer (f.eks E73)" type="text" name="lokasjon" tabindex="3" required>
-<p>Vennligst last opp et bilde av prosjektet</p>
+        <input placeholder="Exponummer (f.eks E73)" type="text" name="lokasjon" tabindex="3" required>
+<p>Vennligst last opp et bilde av prosjektet (virker ikke)</p>
           <input type="file" name="pic" accept="image/*" style="margin-bottom:15px;">
 
-        <input placeholder="Last opp bilde" hidden="hidden"type="url" name="bildeurl" value="http://placehold.it/150x150" tabindex="4" required>
+        <input placeholder="Last opp bilde" hidden="hidden"type="url" name="bildeurl" value="http://prosjekt.hib.no/poster/bachelor/wp-content/uploads/sites/3/2018/07/E100.jpg" tabindex="4" required>
 
 
         <textarea placeholder="Beskrivelse av stand" type="text" name="beskrivelse" tabindex="5" required></textarea>
