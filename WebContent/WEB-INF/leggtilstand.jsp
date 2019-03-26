@@ -55,7 +55,7 @@
         <input placeholder="Gruppemedlemmer" type="text" name="gruppenavn" tabindex="2" required>
 
 
-        <input placeholder="Lokasjon" type="text" name="lokasjon" tabindex="3" required>
+        <input placeholder="Expnummer (f.eks E73)" type="text" name="lokasjon" tabindex="3" required>
 <p>Vennligst last opp et bilde av prosjektet</p>
           <input type="file" name="pic" accept="image/*" style="margin-bottom:15px;">
 
