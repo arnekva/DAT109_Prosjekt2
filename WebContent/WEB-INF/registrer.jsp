@@ -63,6 +63,7 @@
   </div>
   </div>
  </div>
-  <div class="footer">Â© HvL Expo 2019</div>
+  <div class="footer"><div class="footer-left-col"><h4>EXPO 2019</h4><p>Avgangsstudentene ved Avdeling for ingeniør- og økonomifag stiller ut bachelorprosjektene sine på Campus Kronstad.</p></div><div class="footer-mid-col"><h4>Besøk utstillingen</h4>Kl 10–15 onsdag 17. juni</div><div class="footer-right-col"><img class="hvl_logo" src="images/hvl1.png"/></div></div>
+
 </body>
 </html>
