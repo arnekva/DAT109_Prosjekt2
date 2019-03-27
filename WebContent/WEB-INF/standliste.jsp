@@ -96,7 +96,8 @@ Body med bakgrunnsbilde
     <input class="viewtype"type="image" src="images/list.png" onclick="listview()"/>
   </div>
   <h1 class="header_name">Stands på Expo 2019</h1>
-<!--  <div class="grid-list-view"><img class="backimg" src="images/backbutton.png"/><a href="standliste2.html">Listevisning</a></div>
+  <h3 class="header_name" style="color:red;font-size:1.5rem;">${noadmin}</h3>
+  <!--  <div class="grid-list-view"><img class="backimg" src="images/backbutton.png"/><a href="standliste2.html">Listevisning</a></div>
 --><div id="grid-view"class="stand_list">
 
     <ul>
