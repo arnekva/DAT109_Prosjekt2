@@ -52,8 +52,8 @@ public class LeggTilStandServlet extends HttpServlet {
 			Integer id = standEAO.hentNesteId();
 			System.out.println(id);
 			//TODO: Fiks link
-			String qr = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" 
-			+ "data1.hib.no:9090/expo2019_gruppe7/stand" + "?id=" + id;
+			String qr = "https://api.qrserver.com/v1/create-qr-code/?size=1000x1000&data=" 
+			+ "data1.hib.no:9090/expo2019_gruppe7/stand" + "?standid=" + id;
 			stand.setQrUrl(qr);
 			standEAO.leggTilStand(stand);
 			response.sendRedirect("stands");
