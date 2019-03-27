@@ -53,14 +53,8 @@ public class RedigereStandServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		if(request.getParameter("refresh") == null) {
-		Stand stand = StandEAO.hentStandPaaPK(Integer.parseInt(request.getParameter("standid")));
-		Redigere redigere = new Redigere(request,StandEAO, stand);
-		
-			HttpSession sesjon = request.getSession(false);
-			if (sesjon != null) {
-				sesjon.invalidate();
-			}
-			sesjon = request.getSession(true);
+			Stand stand = StandEAO.hentStandPaaPK(Integer.parseInt(request.getParameter("standid")));
+			Redigere redigere = new Redigere(request,StandEAO, stand);
 			
 			redigere.redigereStand(request.getParameter("tittel"), request.getParameter("beskrivelse"), request.getParameter("gruppenavn"), request.getParameter("lokasjon"));
 		
