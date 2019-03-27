@@ -27,7 +27,9 @@ public class StandListeServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession sesjon = request.getSession(false);
+		if(sesjon != null) {
 		sesjon.removeAttribute("noadmin");
+		}
 		List<Stand> standliste = standEAO.hentAlleStands();
 		if(request.getParameter("noAdmin")!=null) {
 			sesjon.setAttribute("noadmin", "Kun juryen har tilgang til den siden.");
