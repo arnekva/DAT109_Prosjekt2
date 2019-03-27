@@ -44,10 +44,11 @@
   <h1 class="header_name">${stand.tittel}</h1>
   <h3 class="header_desc">${stand.lokasjon}</h3>
   <div class="info">
-    <div class="section_info" style="float:right;"><img class="standListImage" src="${stand.bildeurl}" alt="bilde for stand"/></div>
+  <!-- src="${stand.bildeurl}" -->
+    <div class="section_info" style="float:right;"><img class="standListImage" src="images/standImages/E70.jpg" alt="bilde for stand"/></div>
 
     <div class="section_info"><h3 class="header_header">Beskrivelse: </h3>${stand.beskrivelse}</div>
-    <div class="section_info"><h3 class="header_header">Gruppenavn: </h3>${stand.gruppenavn}</div>
+    <div class="section_info"><h3 class="header_header">Forfattere: </h3>${stand.gruppenavn}</div>
     <div class="section_info"><h3 class="header_header">Gi en rating</h3></div>
     <form id="myForm" class="rating" method="post">
         <input type="hidden" value="${stand.standid}"/>
@@ -83,6 +84,7 @@
     </label>
 
   </form>
+  <div class="section_info"><h3 class="header_header"></h3><a href="${stand.qrUrl}">QR-koden for standen finner du ved å klikke her!</a></div>
     </div>
 
   </div>
