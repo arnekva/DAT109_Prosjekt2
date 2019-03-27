@@ -43,6 +43,7 @@
   <h1 class="header_name">Logg inn</h1>
 
   <div class="container1">
+  <h3 class="header_name" style="color:red;font-size:1.5rem;">${feilmelding}</h3>
     <form id="leggtil" action="" method="post">
 
       <fieldset>
