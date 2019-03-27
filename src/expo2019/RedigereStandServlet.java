@@ -67,7 +67,6 @@ public class RedigereStandServlet extends HttpServlet {
 			response.sendRedirect("stands");
 		} else {
 			String standid = request.getParameter("standiddrop");
-			System.out.println(standid);
 			response.sendRedirect("RedigereStand" + "?standid=" + standid);
 		}
 	}
