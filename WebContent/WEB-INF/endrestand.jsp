@@ -48,7 +48,7 @@
     <div><h3>Hvilken stand vil du endre på? (dropdown meny kommer)</h3></div>
     <form id="dropdown" action="" method="post">
     <select class="stand_dropdown" name="standiddrop" onchange="this.form.submit()">
-    
+    <option value="" disabled selected>Velg en stand</option>
      <c:forEach var="stand" items="${standliste}" varStatus="loop">
      
      <option value="${stand.standid}">${stand.tittel}</option>

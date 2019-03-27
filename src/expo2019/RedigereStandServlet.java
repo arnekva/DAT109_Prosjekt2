@@ -34,6 +34,11 @@ public class RedigereStandServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession(false);
+		if(session.getAttribute("admin") == null) {
+			response.sendRedirect("stands" + "?noAdmin");
+		}else {
+		
 		List<Stand> standliste = StandEAO.hentAlleStands();
 		request.removeAttribute("stand");
 		
@@ -45,6 +50,7 @@ public class RedigereStandServlet extends HttpServlet {
 		}
 		request.getSession().setAttribute("standliste", standliste);
 		request.getRequestDispatcher("WEB-INF/endrestand.jsp").forward(request, response);
+		}
 	}
 
 	/**
