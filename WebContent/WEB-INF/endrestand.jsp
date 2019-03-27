@@ -46,14 +46,19 @@
 <h2></h2>
   <div class="container1">
     <div><h3>Hvilken stand vil du endre på? (dropdown meny kommer)</h3></div>
+    <form id="dropdown" action="" method="post">
     <select class="stand_dropdown" name="standid" onchange="this.form.submit()">
+    
      <c:forEach var="stand" items="${standliste}" varStatus="loop">
      
      <option value="${stand.standid}">${stand.tittel}</option>
     
      
      </c:forEach>
+     
       </select>
+      <input type="hidden" name="refresh" value="refreshing">
+      </form>
     <form id="leggtil" action="" method="post">
 
       <fieldset>
@@ -63,7 +68,7 @@
 <p>Vennligst last opp et bilde av prosjektet</p>
           <input type="file" name="pic" accept="image/*" style="margin-bottom:15px;">
         <input placeholder="Last opp bilde" hidden="hidden"type="url" name="bildeurl" value="http://prosjekt.hib.no/poster/bachelor/wp-content/uploads/sites/3/2018/07/E100.jpg" tabindex="4" required>
-	 <textarea placeholder="Beskrivelse av stand" type="text" name="beskrivelse" tabindex="5" value="${stand.beskrivelse}" required></textarea>
+	 <input placeholder="Beskrivelse av stand" type="text" name="beskrivelse" tabindex="5" value="${stand.beskrivelse}" required>
 
 	<input type="hidden" name="standid" value="${stand.standid}">
         <button name="submit" type="submit" id="leggtil-submit" data-submit="...Sending">Submit</button>

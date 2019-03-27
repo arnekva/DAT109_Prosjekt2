@@ -40,8 +40,8 @@ public class RedigereStandServlet extends HttpServlet {
 		int standid1 = Integer.parseInt(standid);
 		Stand stand = StandEAO.hentStandPaaPK(standid1);
 		request.getSession().setAttribute("stand", stand);
-		request.getSession().setAttribute("standliste", standliste);
 		}
+		request.getSession().setAttribute("standliste", standliste);
 		request.getRequestDispatcher("WEB-INF/endrestand.jsp").forward(request, response);
 	}
 
@@ -50,6 +50,7 @@ public class RedigereStandServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		if(request.getParameter("refresh") == null) {
 		Stand stand = StandEAO.hentStandPaaPK(Integer.parseInt(request.getParameter("standid")));
 		Redigere redigere = new Redigere(request,StandEAO, stand);
 		
@@ -60,8 +61,12 @@ public class RedigereStandServlet extends HttpServlet {
 			sesjon = request.getSession(true);
 			
 			redigere.redigereStand(request.getParameter("tittel"), request.getParameter("beskrivelse"), request.getParameter("gruppenavn"), request.getParameter("lokasjon"));
-			
+		
 			response.sendRedirect("stands");
+		} else {
+			String standid = request.getParameter("standid");
+			response.sendRedirect("RedigereStand" + "?standid=" + standid);
+		}
 	}
 
 }
