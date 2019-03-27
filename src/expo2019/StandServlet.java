@@ -49,7 +49,9 @@ public class StandServlet extends HttpServlet {
 		}
 
 		String standid = request.getParameter("standid");
+		if(sesjon.getAttribute("standid") != null) {
 		request.getSession().removeAttribute("standid");
+		}
 		if (!standEAO.kanKonverteres(standid)) {
 			response.sendRedirect("stand" + "?unknownStandId");
 		}
