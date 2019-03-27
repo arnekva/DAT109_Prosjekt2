@@ -30,7 +30,7 @@ public class LoggInnServlet extends HttpServlet {
 		if (sesjon == null) {
 			sesjon = request.getSession(true);
 		}
-		if (sesjon.getAttribute("user") != null || sesjon.getAttribute("admin") != null) {
+		if (sesjon.getAttribute("bruker") != null || sesjon.getAttribute("admin") != null) {
 			response.sendRedirect("stands" + "?alreadyLoggedIn");
 		} else {
 			sesjon.removeAttribute("feilmelding");
