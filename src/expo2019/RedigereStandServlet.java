@@ -35,6 +35,8 @@ public class RedigereStandServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Stand> standliste = StandEAO.hentAlleStands();
+		request.removeAttribute("stand");
+		
 		String standid = request.getParameter("standid");
 		if(standid != null) {
 		int standid1 = Integer.parseInt(standid);
@@ -64,7 +66,8 @@ public class RedigereStandServlet extends HttpServlet {
 		
 			response.sendRedirect("stands");
 		} else {
-			String standid = request.getParameter("standid");
+			String standid = request.getParameter("standiddrop");
+			System.out.println(standid);
 			response.sendRedirect("RedigereStand" + "?standid=" + standid);
 		}
 	}
