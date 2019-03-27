@@ -33,7 +33,7 @@ public class StandServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession sesjon = request.getSession(false);
+		HttpSession sesjon = request.getSession(true);
 		if(sesjon.getAttribute("feilmelding") != null) {
 		sesjon.removeAttribute("feilmelding");
 		}
@@ -70,7 +70,7 @@ public class StandServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		HttpSession sesjon = request.getSession(false);
-		if (sesjon == null) {
+		if (sesjon.getAttribute("bruker") != null || sesjon.getAttribute("admin") != null) {
 			response.sendRedirect("logginn" + "?nosession");
 		} else {
 			String ratingParam = request.getParameter("stars");
