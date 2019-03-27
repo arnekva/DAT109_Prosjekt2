@@ -34,7 +34,9 @@ public class StandServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession sesjon = request.getSession(false);
+		if(sesjon.getAttribute("feilmelding") != null) {
 		sesjon.removeAttribute("feilmelding");
+		}
 		String feilmelding = null;
 		if (request.getParameter("invalidRating") != null) {
 			feilmelding = "Stemmen ble ikke registrert.";
