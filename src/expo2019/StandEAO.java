@@ -84,7 +84,7 @@ public class StandEAO {
 	
 	public void redigereStand(Stand stand) {
 		String sql = "SELECT * FROM EXPO2019.stand WHERE standid = "+stand.getStandid();
-		Query query = em.createNativeQuery(sql, StandRating.class);
+		Query query = em.createNativeQuery(sql, Stand.class);
 		Stand resultat = (Stand) query.getSingleResult();
 		
 		resultat.setBeskrivelse(stand.getBeskrivelse());
