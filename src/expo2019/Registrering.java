@@ -22,6 +22,10 @@ public class Registrering {
 		this.standEAO = StandEAO;
 	}
 	
+	/**
+	 * Sjekker om alle felt i skjemaet er gyldige
+	 * @return boolean true eller false
+	 */
 	public boolean erAlleFeltGyldig() {
 		return (erTlfGyldig(this.tlf)) && (erPassordGyldig(this.passord)) && (erRepeterGyldig(this.repeterPassord));
 	}
@@ -39,6 +43,11 @@ public class Registrering {
 //
 //	}
 
+	/**
+	 * Sjekker om et gitt telefonnummer er gyldig (og følger norske regler på 4- eller 9-)
+	 * @param tlf String for telefonnummer fra parameter
+	 * @return boolean true eller false
+	 */
 	public boolean erTlfGyldig(String tlf) {
 		try {
 			int nr = Integer.parseInt(tlf);
@@ -49,14 +58,26 @@ public class Registrering {
 		}
 	}
 	
+	/** Sjekker første inntastning av passord
+	 * @param passord
+	 * @return
+	 */
 	public boolean erPassordGyldig(String passord) {
 		return passord.matches(tillatpassord) && passord != null && passord.length() > 4;
 	}
 	
+	/** Sjekker andre inntasting av passord
+	 * @param repeterPassord
+	 * @return
+	 */
 	public boolean erRepeterGyldig(String repeterPassord) {
 		return erPassordGyldig(this.passord) && repeterPassord.equals(this.passord);
 	}
 	
+	/**
+	 * Lager en ny bruker
+	 * @return Et User Object
+	 */
 	public User newUser() {
 		int tlf2 = Integer.parseInt(this.tlf);
 		String passordKryptert = PassordUtil.krypterPassord(this.passord);
@@ -65,6 +86,9 @@ public class Registrering {
 		return user;
 	}
 	
+	/**
+	 * Genererer feilmeldinger basert på hvilke(t) felt som er feil
+	 */
 	public void genererFeilmelding() {
 		if(!erPassordGyldig(passord)) {
 			this.passord = "";

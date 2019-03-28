@@ -19,16 +19,31 @@ public class StandEAO {
 	@PersistenceContext(name = "expoPU")
 	private EntityManager em;
 
+	/**
+	 * Legger til et nytt Stand Object i databasen
+	 * @param stand Stand Object
+	 */
 	public synchronized void leggTilStand(Stand stand) {
 		em.persist(stand);
 	}
 
+	/**
+	 * Finner en stand på primærnøkkel
+	 * @param standid - Int standid
+	 * @return Stand Object
+	 */
 	public Stand hentStandPaaPK(int standid) {
 
 		return em.find(Stand.class, standid);
 
 	}
 	
+	/**
+	 * Sjekker om en bruker allerede har stemt på en stand
+	 * @param standid
+	 * @param tlfnr
+	 * @return
+	 */
 	public double hentScorePaaPk(int standid, int tlfnr) {
 		String sql = "SELECT * FROM EXPO2019.standrating WHERE tlfnr="+tlfnr+" AND standid="+standid;
 		Query query = em.createNativeQuery(sql, StandRating.class);
@@ -37,6 +52,10 @@ public class StandEAO {
 		return score;
 	}
 	
+	/**
+	 * Finner neste id som neste stand skal få (automatisk generert)
+	 * @return Integer
+	 */
 	public int hentNesteId() {
 		
 		try {
@@ -53,6 +72,10 @@ public class StandEAO {
 		}
 	}
 
+	/**
+	 * Henter alle stands fra databasen
+	 * @return List<Stand>
+	 */
 	public List<Stand> hentAlleStands() {
 
 		List<Stand> stands = null;
@@ -62,6 +85,10 @@ public class StandEAO {
 		return stands;
 	}
 	
+	/**
+	 * Oppdaterer og kalkulerer total score for en stand
+	 * @param stand Stand Object
+	 */
 	public void setTotalRating(Stand stand) {
 		double rating = 0;
 
@@ -82,6 +109,10 @@ public class StandEAO {
 		stand.setKalkulertscore(rating);
 	}
 	
+	/**
+	 * Redigerer informasjonen til en stand
+	 * @param stand Stand Object
+	 */
 	public void redigereStand(Stand stand) {
 		String sql = "SELECT * FROM EXPO2019.stand WHERE standid = "+stand.getStandid();
 		Query query = em.createNativeQuery(sql, Stand.class);
@@ -96,10 +127,20 @@ public class StandEAO {
 		em.merge(resultat);
 	}
 	
+	/**
+	 * Finner en bruker på primærnøkkel
+	 * @param tlfnr 
+	 * @return User Object
+	 */
 	public User hentBrukerPaaPK(int tlfnr) {
 		return em.find(User.class, tlfnr);
 	}
 	
+	/**
+	 * Sjekker om en string kan konverteres til en int
+	 * @param i
+	 * @return
+	 */
 	public boolean kanKonverteres(String i) {
 		try {
 			Integer.parseInt(i);
@@ -109,12 +150,22 @@ public class StandEAO {
 		}
 	}
 	
+	/**
+	 * Legger til en standrating i databasen
+	 * @param standrating
+	 */
 	public synchronized void leggTilStandRating(StandRating standrating) {
 		em.persist(standrating);
 	}
 	public synchronized void leggTilBruker(User user) {
 		em.persist(user);
 	}
+	/**
+	 * Fjerner ekstra desimaler fra en double
+	 * @param value
+	 * @param places
+	 * @return
+	 */
 	public static double round(double value, int places) {
 	    if (places < 0) throw new IllegalArgumentException();
 	    try {

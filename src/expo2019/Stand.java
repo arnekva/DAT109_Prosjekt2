@@ -52,6 +52,10 @@ public class Stand implements Comparable<Stand>{
 		kalkulertscore = 0.0;
 	}
 	
+	/**
+	 * Sjekker om all input er gyldig
+	 * @return boolean true eller false
+	 */
 	public boolean hasValidInput() {
 		return (tittel != null && beskrivelse != null && gruppenavn != null && lokasjon != null
 				&& bildeurl != null); 

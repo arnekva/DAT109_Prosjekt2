@@ -21,10 +21,17 @@ public class LoggInn {
 		this.standEAO = standEAO;
 	}
 	
+	/**
+	 * Sjekker om brukerens input er lovlig.
+	 * @return boolean true eller false 
+	 */
 	public boolean isInputValid() {
 		return this.mobilnr.matches(tillatmobilnr) && this.passord.matches(tillatpassord);
 	}
 	
+	/**
+	 * Generer en feilmelding dersom en av inputene er feil. Pga sikkerhet varsles det ikke om hvilken som er feil
+	 */
 	public void genererFeilmelding() {
 		if (!isInputValid() || !isLogginnValid()) {
 			mobilnr = "";
@@ -33,6 +40,10 @@ public class LoggInn {
 		}
 	}
 	
+	/**
+	 * Sjekker om strengen brukeren har tastet inn matcher passordet i databasen (hashes)
+	 * @return boolean true eller false
+	 */
 	public boolean isLogginnValid() {
 		try {
 			if (isInputValid()) {
@@ -58,6 +69,10 @@ public class LoggInn {
 		return feilmelding;
 	}
 	
+	/**
+	 * Henter et User-objekt fra telefonnummer (primærnøkkel)
+	 * @return User object
+	 */
 	public User hentUser() {
 		User user = standEAO.hentBrukerPaaPK(Integer.parseInt(this.mobilnr));
 		return user;

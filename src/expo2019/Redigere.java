@@ -13,6 +13,12 @@ public class Redigere extends Stand{
 	
 	private Stand stand;
 	
+	/**
+	 * Oppdaterer en stand som allerede ligger lagret i databasen med ny informajson
+	 * @param request HttpRequest fra servlet
+	 * @param StandEAO StandEAO som opprettes i servlet
+	 * @param stand Et stand object som skal endres
+	 */
 	public Redigere(HttpServletRequest request, StandEAO StandEAO, Stand stand) {
 		this.tittel = (String) request.getParameter("tittel");
 		this.gruppenavn = (String) request.getParameter("gruppenavn");
@@ -22,6 +28,13 @@ public class Redigere extends Stand{
 		this.stand = stand;
 	}
 	
+	/**
+	 * Redigerer standen
+	 * @param tittel Ny tittel
+	 * @param beskrivelse Ny beskrivelse
+	 * @param gruppenavn Nye forfattere
+	 * @param lokasjon Nytt exponummer
+	 */
 	public void redigereStand(String tittel, String beskrivelse, String gruppenavn, String lokasjon) {
 		stand.setBeskrivelse(beskrivelse);
 		stand.setGruppenavn(gruppenavn);
