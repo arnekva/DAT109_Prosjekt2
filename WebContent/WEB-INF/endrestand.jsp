@@ -45,7 +45,7 @@
   <h1 class="header_name">Endre en stand:</h1>
 <h2></h2>
   <div class="container1">
-    <div><h3>Hvilken stand vil du endre på? (dropdown meny kommer)</h3></div>
+    <div class="textforendre"><h3>Hvilken stand vil du endre på?</h3></div>
     <form id="dropdown" action="" method="post">
     <select class="stand_dropdown" name="standiddrop" onchange="this.form.submit()">
     <option value="" disabled selected>Velg en stand</option>

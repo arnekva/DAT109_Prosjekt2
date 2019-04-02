@@ -147,8 +147,14 @@ font-size: 1.5rem;
   margin-top:20px;
   margin-bottom: 50px;
 }
+.backbutton{
+  text-align: center;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:60px;
+}
 .backbutton a{
-
+  text-align:center;
     border-bottom: 1px solid #64d0df;
     color: #008aaf;
     text-decoration: none;
@@ -156,11 +162,18 @@ font-size: 1.5rem;
     border-bottom: none;
         display: block;
         font-family: "AkademieStd",sans-serif;
-            font-size: 1.125rem;
+            font-size: 1.5rem;
             float:left;
+            margin-left:auto;
+            margin-right:auto;
 }
 .backbutton a:hover{
 color: #00a9d8;
+}
+.ingenbruker{
+  font-size:1.5rem;
+  margin-left:auto;
+  margin-right:auto;
 }
 .backbutton2{
   display: -webkit-flex;
@@ -176,6 +189,8 @@ padding-bottom: 5px;
 border-bottom: 1px solid #c2eaf0;
 border-radius: 3px 3px 0 0;
 padding-bottom: 10px;
+margin-bottom:40px;
+font-size:1.5rem;
 }
 .backbutton2 a{
   text-decoration: none;
@@ -189,6 +204,11 @@ color:#0095c1;
 .info_jury{
   margin-top:80px;
   margin-left:60px;
+}
+.textforendre{
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
 }
 @media (min-width: 100px) and (max-width: 1000px) {
 
@@ -524,7 +544,6 @@ margin-bottom: 400px;
   font-size:40px;
   text-align:center;
   margin-bottom:20px;
-  margin-top:160px;
   color:#eb6851;
 }
 .header_home{
@@ -1017,7 +1036,7 @@ padding: 0px;
     border-bottom: none;
         display: block;
         font-family: "AkademieStd",sans-serif;
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             float:left;
             margin-bottom:20px;
 }

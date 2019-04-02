@@ -62,8 +62,7 @@
         <input placeholder="Last opp bilde" hidden="hidden"type="url" name="bildeurl" value="http://prosjekt.hib.no/poster/bachelor/wp-content/uploads/sites/3/2018/07/E100.jpg" tabindex="4" required>
 
 
-        <textarea placeholder="Beskrivelse av stand" type="text" name="beskrivelse" tabindex="5" required></textarea>
-
+       <input placeholder="Beskrivelse av stand" type="text" name="beskrivelse" tabindex="5"  required>
 
         <button name="submit" type="submit" id="leggtil-submit" data-submit="...Sending">Submit</button>
       </fieldset>
