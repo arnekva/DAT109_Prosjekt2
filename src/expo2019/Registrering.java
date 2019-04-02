@@ -30,18 +30,6 @@ public class Registrering {
 		return (erTlfGyldig(this.tlf)) && (erPassordGyldig(this.passord)) && (erRepeterGyldig(this.repeterPassord));
 	}
 	
-	
-//	public boolean erTlfLedig() {
-//		try {
-//			int nr = Integer.parseInt(this.tlf);
-//			User eksistenssjekk = standEAO.hentBrukerPaaPK(nr);
-//			
-//			return false;
-//		} catch (Exception e) {
-//			return true;
-//		}
-//
-//	}
 
 	/**
 	 * Sjekker om et gitt telefonnummer er gyldig (og følger norske regler på 4- eller 9-)

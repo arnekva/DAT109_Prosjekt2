@@ -49,14 +49,24 @@ public class RegistreringServlet extends HttpServlet {
 				sesjon.invalidate();
 			}
 			sesjon = request.getSession(true);
-			User user = registrering.newUser();
-			if (user.getTlfnr() == 99999999) {
-				request.getSession().setAttribute("admin", user);
-			} else {
-				request.getSession().setAttribute("bruker", user);
+			try {
+				int tlf = Integer.parseInt(registrering.getTlf());
+				User eksistensSjekk = StandEAO.hentBrukerPaaPK(tlf);
+				if (eksistensSjekk != null) {
+					registrering.setTlfFeil("Nummeret er allerede i bruk. Vennligst logg inn.");
+					sesjon.setAttribute("Registrering", registrering);
+					response.sendRedirect("registrering");
+				}
+			} catch (Exception e) {
+				User user = registrering.newUser();
+				if (user.getTlfnr() == 99999999) {
+					request.getSession().setAttribute("admin", user);
+				} else {
+					request.getSession().setAttribute("bruker", user);
+				}
+				response.sendRedirect("stands");
 			}
-			response.sendRedirect("stands");
-		}else {
+		} else {
 			registrering.genererFeilmelding();
 			request.getSession().setAttribute("Registrering", registrering);
 			response.sendRedirect("registrering");

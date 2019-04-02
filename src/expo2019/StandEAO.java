@@ -174,11 +174,16 @@ public class StandEAO {
 	}
 	
 	/**
-	 * Legger til en standrating i databasen
+	 * Legger til en standrating i databasen. Endrer eksisterende hvis den eksisterer.
 	 * @param standrating
 	 */
 	public synchronized void leggTilStandRating(StandRating standrating) {
-		em.persist(standrating);
+		StandRating sr = hentScorePaaPk(standrating.getStand().getStandid(), standrating.getUser().getTlfnr());
+		if (sr != null) {
+			sr.setRating(standrating.getRating());;
+		} else {
+			em.persist(standrating);
+		}
 	}
 	public synchronized void leggTilBruker(User user) {
 		em.persist(user);
