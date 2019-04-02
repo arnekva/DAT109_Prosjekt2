@@ -996,6 +996,7 @@ overflow:visible;
     right:0;
     top:0;
         margin-top:50px;
+        position: relative;
   }
 .container_index{
   width:90%;
@@ -1320,20 +1321,24 @@ color: #00a9d8;
   line-height: 3.5rem;
 
 }
+html,
+body {
+ height: 100%;
+ position: relative;
+}
 .footer {
   height:550px;
   width:100%;
-  position: absolute;
+  position: absolute !important;
   right: 0;
   left: 0;
-   width:100%;
+  bottom:0 !important;
   background-color: #EFF0F2;
   text-align: center;
-    margin-bottom:0px;
-    margin-right: 0px;
+display:none;
     font-size: 2rem;
 color:#444444;
-margin-top:550px;
+
 }
 .footer-left-col{
   float:none;
