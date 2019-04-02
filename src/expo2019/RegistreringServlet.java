@@ -16,48 +16,51 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/registrering")
 public class RegistreringServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
 	@EJB
 	private StandEAO StandEAO;
-	
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public RegistreringServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public RegistreringServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		request.getRequestDispatcher("WEB-INF/registrer.jsp").forward(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		Registrering registrering = new Registrering(request,StandEAO);
-		
-		if(registrering.erAlleFeltGyldig()) {
+		Registrering registrering = new Registrering(request, StandEAO);
+
+		if (registrering.erAlleFeltGyldig()) {
 			HttpSession sesjon = request.getSession(false);
 			if (sesjon != null) {
 				sesjon.invalidate();
 			}
 			sesjon = request.getSession(true);
-			try {
-				int tlf = Integer.parseInt(registrering.getTlf());
-				User eksistensSjekk = StandEAO.hentBrukerPaaPK(tlf);
-				if (eksistensSjekk != null) {
-					registrering.setTlfFeil("Nummeret er allerede i bruk. Vennligst logg inn.");
-					sesjon.setAttribute("Registrering", registrering);
-					response.sendRedirect("registrering");
-				}
-			} catch (Exception e) {
+
+			int tlf = Integer.parseInt(registrering.getTlf());
+			User eksistensSjekk = StandEAO.hentBrukerPaaPK(tlf);
+			if (eksistensSjekk != null) {
+				registrering.setTlfFeil("Nummeret er allerede i bruk. Vennligst logg inn.");
+				sesjon.setAttribute("Registrering", registrering);
+				response.sendRedirect("registrering");
+			} else {
+
 				User user = registrering.newUser();
 				if (user.getTlfnr() == 99999999) {
 					request.getSession().setAttribute("admin", user);
@@ -73,4 +76,3 @@ public class RegistreringServlet extends HttpServlet {
 		}
 	}
 }
-
