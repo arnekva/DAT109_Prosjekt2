@@ -56,8 +56,8 @@
 
 
         <input placeholder="Exponummer (f.eks E73)" type="text" name="lokasjon" tabindex="3" required>
-<p>Vennligst last opp et bilde av prosjektet (virker ikke)</p>
-          <input type="file" name="pic" accept="image/*" style="margin-bottom:15px;">
+<!-- <p>Vennligst last opp et bilde av prosjektet (virker ikke)</p>
+          <input type="file" name="pic" accept="image/*" style="margin-bottom:15px;"> -->
 
         <input placeholder="Last opp bilde" hidden="hidden"type="url" name="bildeurl" value="http://prosjekt.hib.no/poster/bachelor/wp-content/uploads/sites/3/2018/07/E100.jpg" tabindex="4" required>
 

@@ -39,7 +39,7 @@
   </div>
     </div>
 <div class="container">
-<div class="backbutton"><img class="backimg" src="images/backbutton.png"/><a href="standliste.html">Ta meg tilbake til listen</a></div>
+<div class="backbutton"><img class="backimg" src="images/backbutton.png"/><a href="standliste">Ta meg tilbake til listen</a></div>
   <h1 class="header_name">Juryfunksjoner</h1>
 
   <div class="info_jury">
@@ -51,7 +51,7 @@
 
   </div>
   </div>
-  <div class="footer"><div class="footer-left-col"><h4>EXPO 2019</h4><p>Avgangsstudentene ved Avdeling for ingeniør- og økonomifag stiller ut bachelorprosjektene sine på Campus Kronstad.</p></div><div class="footer-mid-col"><h4>Besøk utstillingen</h4>Kl 10-15 onsdag 17. juni</div><div class="footer-right-col"><img class="hvl_logo" src="images/hvl1.png"/></div></div>
+  <div class="footer"><div class="footer-left-col"><h4>EXPO 2019</h4><p>Avgangsstudentene ved Avdeling for ingeniÃ¸r- og Ã¸konomifag stiller ut bachelorprosjektene sine pÃ¥ Campus Kronstad.</p></div><div class="footer-mid-col"><h4>BesÃ¸k utstillingen</h4>Kl 10-15 onsdag 17. juni</div><div class="footer-right-col"><img class="hvl_logo" src="images/hvl1.png"/></div></div>
 
 </body>
 </html>
