@@ -39,7 +39,7 @@
   </div>
     </div>
 <div class="container">
-<div class="backbutton"><img class="backimg" src="images/backbutton.png"/><a href="standliste">Ta meg tilbake til listen</a></div>
+<div class="backbutton"><img class="backimg" src="images/backbutton.png"/><a href="stands">Ta meg tilbake til listen</a></div>
   <h1 class="header_name">Juryfunksjoner</h1>
 
   <div class="info_jury">
