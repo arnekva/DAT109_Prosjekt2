@@ -60,8 +60,8 @@ fieldset {
   margin: 0 0 5px;
   padding: 30px;
   font-size:1.7rem;
-  vertical-align:middle;
-
+  vertical-align:sub;
+line-height: 1;
 }
 
 #leggtil input[type="text"]:hover,
