@@ -31,7 +31,7 @@
       <ul>
 
         <a href="hjem.html"><img class="logo"src="images/expo_logo.png"/></a>
-          <li ><a href="annet.html">Annet</a></li>
+         <li ><a href="minside">Min Side</a></li>
         <li ><a href="kontakt.html">Kontakt</a></li>
         <li class="active"><a href="jury" >For Juryen</a></li>
         <li ><a href="stands">Stands</a></li>

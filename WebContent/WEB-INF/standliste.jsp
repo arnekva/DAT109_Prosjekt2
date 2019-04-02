@@ -43,7 +43,7 @@ Body med bakgrunnsbilde
       <ul>
 
         <a href="hjem.html"><img class="logo"src="images/expo_logo.png"/></a>
-          <li ><a href="annet.html">Annet</a></li>
+         <li ><a href="minside">Min Side</a></li>
         <li ><a href="kontakt.html">Kontakt</a></li>
         <li ><a href="jury" >For Juryen</a></li>
         <li class="active"><a href="stands">Stands</a></li>
@@ -104,7 +104,10 @@ Body med bakgrunnsbilde
       <li id="list-view-header">
           <p class="exponr-title">ExpoNr</p><p class="infoText-title">Tittel</p><p class="exponr-forfattere">Forfattere</p></a>
       </li>
-
+<li>
+        <a class="standlist-title-link" href="presentasjon.html"><img class="standListImage" src="images/standImages/E00.jpg"/>
+          <p class="exponr">E00</p><p class="infoText">Presentasjon av prosjektoppgave 1</p><p class="exponr">Gruppe 7</p></a>
+      </li>
 <c:forEach var="stand" items="${standliste}" varStatus="loop">
 
 
