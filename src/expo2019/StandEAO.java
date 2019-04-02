@@ -51,6 +51,32 @@ public class StandEAO {
 		return standrating;
 	}
 	
+	
+	/**
+	 * Henter alle ratinger av en gitt stand.
+	 * @param standid
+	 * @return 
+	 */
+	public List<StandRating> hentScorePaaStand(int standid) {
+		String sql = "SELECT * FROM EXPO2019.standrating WHERE standid = "+standid;
+		Query query = em.createNativeQuery(sql, StandRating.class);
+		List<StandRating> resultat = (List<StandRating>) query.getResultList();
+		return resultat;
+	}
+	
+	
+	/**
+	 * Henter alle ratinger en gitt bruker har registrert.
+	 * @param tlfnr
+	 * @return
+	 */
+	public List<StandRating> hentScorePaaBruker(int tlfnr) {
+		String sql = "SELECT * FROM EXPO2019.standrating WHERE tlfnr = "+tlfnr;
+		Query query = em.createNativeQuery(sql, StandRating.class);
+		List<StandRating> resultat = (List<StandRating>) query.getResultList();
+		return resultat;
+	}
+	
 	/**
 	 * Finner neste id som neste stand skal få (automatisk generert)
 	 * @return Integer
@@ -133,7 +159,36 @@ public class StandEAO {
 	public void slettStandPaaPK(int id) {
 		Stand stand = hentStandPaaPK(id);
 		if (stand != null) {
+			List<StandRating> ratingliste;
+			try {
+				ratingliste = hentScorePaaStand(id);
+			} catch (Exception e) {
+				ratingliste = null;
+			}
+			if (ratingliste != null) {
+				for (StandRating sr : ratingliste) {
+					em.remove(sr);
+				}
+			}
 			em.remove(stand);
+		}
+	}
+	
+	public void slettBrukerPaaPK(int tlfnr) {
+		User bruker = hentBrukerPaaPK(tlfnr);
+		if (bruker != null) {
+			List<StandRating> ratingliste;
+			try {
+				ratingliste = hentScorePaaBruker(tlfnr);
+			} catch (Exception e) {
+				ratingliste = null;
+			}
+			if (ratingliste != null) {
+				for (StandRating sr : ratingliste) {
+					em.remove(sr);
+				}
+			}
+			em.remove(bruker);
 		}
 	}
 	
@@ -178,9 +233,14 @@ public class StandEAO {
 	 * @param standrating
 	 */
 	public synchronized void leggTilStandRating(StandRating standrating) {
-		StandRating sr = hentScorePaaPk(standrating.getStand().getStandid(), standrating.getUser().getTlfnr());
+		StandRating sr;
+		try {
+			sr = hentScorePaaPk(standrating.getStand().getStandid(), standrating.getUser().getTlfnr());
+		} catch (Exception e) {
+			sr = null;
+		}
 		if (sr != null) {
-			sr.setRating(standrating.getRating());;
+			sr.setRating(standrating.getRating());
 		} else {
 			em.persist(standrating);
 		}
