@@ -44,12 +44,11 @@ public class StandEAO {
 	 * @param tlfnr
 	 * @return
 	 */
-	public double hentScorePaaPk(int standid, int tlfnr) {
+	public StandRating hentScorePaaPk(int standid, int tlfnr) {
 		String sql = "SELECT * FROM EXPO2019.standrating WHERE tlfnr="+tlfnr+" AND standid="+standid;
 		Query query = em.createNativeQuery(sql, StandRating.class);
 		StandRating standrating = (StandRating) query.getSingleResult();
-		double score = standrating.getRating();
-		return score;
+		return standrating;
 	}
 	
 	/**
@@ -125,6 +124,30 @@ public class StandEAO {
 		//resultat.setBilde(stand.getBilde());
 		
 		em.merge(resultat);
+	}
+	
+	/**
+	 * Sletter en stand fra database med angitt id
+	 * @param id - Id på stand som skal slettes
+	 */
+	public void slettStandPaaPK(int id) {
+		Stand stand = hentStandPaaPK(id);
+		if (stand != null) {
+			em.remove(stand);
+		}
+	}
+	
+	
+	/**
+	 * Sletter en standrating fra database med angitt id og tlfnr
+	 * @param standid
+	 * @param tlfnr
+	 */
+	public void slettScorePaaPK(int standid, int tlfnr) {
+		StandRating sr = hentScorePaaPk(standid, tlfnr);
+		if (sr != null) {
+			em.remove(sr);
+		}
 	}
 	
 	/**
