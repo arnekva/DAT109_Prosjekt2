@@ -3,9 +3,6 @@
 
 
 
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,9 +40,9 @@ Body med bakgrunnsbilde
       <ul>
 
         <a href="hjem.html"><img class="logo"src="images/expo_logo.png"/></a>
-         <li ><a href="minside">Min Side</a></li>
+          <li ><a href="annet.html">Annet</a></li>
         <li ><a href="kontakt.html">Kontakt</a></li>
-        <li ><a href="jury" >For Juryen</a></li>
+        <li ><a href="jury.html" >For Juryen</a></li>
         <li class="active"><a href="stands">Stands</a></li>
          <li ><a href="logginn">Logg inn</a></li>
         <li ><a href="hjem.html">Hjem</a></li>
@@ -96,28 +93,27 @@ Body med bakgrunnsbilde
     <input class="viewtype"type="image" src="images/list.png" onclick="listview()"/>
   </div>
   <h1 class="header_name">Stands på Expo 2019</h1>
-  <h3 class="header_name" style="color:red;font-size:1.5rem;">${noadmin}</h3>
-  <!--  <div class="grid-list-view"><img class="backimg" src="images/backbutton.png"/><a href="standliste2.html">Listevisning</a></div>
+<!--  <div class="grid-list-view"><img class="backimg" src="images/backbutton.png"/><a href="standliste2.html">Listevisning</a></div>
 --><div id="grid-view"class="stand_list">
 
-    <ul>
-      <li id="list-view-header">
-          <p class="exponr-title">ExpoNr</p><p class="infoText-title">Tittel</p><p class="exponr-forfattere">Forfattere</p></a>
-      </li>
+<ul>
+<li id="list-view-header">
+    <p class="exponr-title">ExpoNr</p><p class="infoText-title">Tittel</p><p class="exponr-forfattere">Forfattere</p></a>
+</li>
 
 <c:forEach var="stand" items="${standliste}" varStatus="loop">
 
 
 <li>
-        <a class="standlist-title-link" href="stand?standid=${stand.standid}"><img class="standListImage" src="images/standImages/E70.jpg"/>
-          <p class="exponr">${stand.lokasjon}</p><p class="infoText">${stand.tittel}</p><p class="exponr">${stand.gruppenavn}</p></a>
-      </li>
-		</c:forEach>
+  <a class="standlist-title-link" href="stand?standid=${stand.standid}"><img class="standListImage" src="images/standImages/E70.jpg"/>
+    <p class="exponr">${stand.lokasjon}</p><p class="infoText">${stand.tittel}</p><p class="exponr">${stand.gruppenavn}</p></a>
+</li>
+</c:forEach>
 <li>
-        <a class="standlist-title-link" href="presentasjon.html"><img class="standListImage" src="images/standImages/E00.jpg"/>
-          <p class="exponr">E00</p><p class="infoText">Presentasjon av prosjektoppgave 1</p><p class="exponr">Gruppe 7</p></a>
-      </li>
-    </ul>
+  <a class="standlist-title-link" href="presentasjon.html"><img class="standListImage" src="images/standImages/E00.jpg"/>
+    <p class="exponr">E00</p><p class="infoText">Presentasjon av prosjektoppgave 1</p><p class="exponr">Gruppe 7</p></a>
+</li>
+</ul>
   </div>
   </div>
   </div>
