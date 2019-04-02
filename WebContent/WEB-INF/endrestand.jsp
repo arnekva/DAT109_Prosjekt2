@@ -30,7 +30,7 @@
       <ul>
 
         <a href="hjem.html"><img class="logo"src="images/expo_logo.png"/></a>
-          <li ><a href="annet.html">Annet</a></li>
+          <li ><a href="minside">Min Side</a></li>
         <li ><a href="kontakt.html">Kontakt</a></li>
         <li class="active"><a href="jury" >For Juryen</a></li>
         <li ><a href="stands">Stands</a></li>
@@ -46,6 +46,7 @@
 <h2></h2>
   <div class="container1">
     <div class="textforendre"><h3>Hvilken stand vil du endre på?</h3></div>
+    
     <form id="dropdown" action="" method="post">
     <select class="stand_dropdown" name="standiddrop" onchange="this.form.submit()">
     <option value="" disabled selected>Velg en stand</option>
@@ -59,6 +60,7 @@
       </select>
       <input type="hidden" name="refresh" value="refreshing">
       </form>
+      <div class="textforendre"><p>Vil du slette en stand? <a href="slettstand">Klikk her!</a></p></div>
     <form id="leggtil" action="" method="post">
 
       <fieldset>

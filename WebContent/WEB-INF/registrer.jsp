@@ -28,7 +28,7 @@
       <ul>
 
         <a href="hjem.html"><img class="logo"src="images/expo_logo.png"/></a>
-          <li ><a href="annet.html">Annet</a></li>
+          <li ><a href="minside">Min Side</a></li>
         <li ><a href="kontakt.html">Kontakt</a></li>
         <li ><a href="jury" >For Juryen</a></li>
         <li ><a href="stands">Stands</a></li>
@@ -47,7 +47,6 @@
       <fieldset>
         <input placeholder="Telefonnummer" type="tel" name="tlf" tabindex="1" required autofocus>
         <p class="feilerror">${Registrering.tlfFeil}</p>
-
 
         <input placeholder="Passord" type="password" name="passord" tabindex="2" required>
 <p class="feilerror">${Registrering.passordFeil}</p>
